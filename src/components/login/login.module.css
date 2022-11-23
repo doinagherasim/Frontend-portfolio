@@ -1,0 +1,76 @@
+.div_wrapper {
+  width: 1000px;
+  height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.yam {
+  font-size: 60px;
+  font-family: cooperplate;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.img1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 150px;
+  display: block;
+}
+
+.p {
+  font-size: 25px;
+  text-align: center;
+  margin-top: -20px;
+}
+
+.btn_left {
+  float: left;
+  background-color: #ffb067;
+  width: 200px;
+  height: 60px;
+  margin-top: 190px;
+  margin-left: 190px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn_right {
+  float: right;
+  background-color: #ffb067;
+  width: 200px;
+  height: 60px;
+  margin-top: 190px;
+  margin-right: 190px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn_right:active {
+  background-color: grey;
+  color: white;
+  box-shadow: 2px 2px 5px #2b1103;
+  cursor: pointer;
+}
+.btn_left:active {
+  background-color: grey;
+  color: white;
+  box-shadow: 2px 2px 5px #2b1103;
+  cursor: pointer;
+}
+.btn_right:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+.btn_left:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
