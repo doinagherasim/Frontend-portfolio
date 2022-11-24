@@ -20,10 +20,9 @@ import done from '../../assets/done.png'
 import extra from '../../assets/extra.png'
 
 
-function FeedTheCat(props) {
-    let params = useParams();
-    console.log(params.teamId);
+function FeedTheCat() {
     // Tiberiu or Doina?
+    let params = useParams();
 
     // navigation link to Home
     let navigate = useNavigate();
@@ -34,150 +33,253 @@ function FeedTheCat(props) {
     const [open9, setOpen9] = useState(false);
     const [open10, setOpen10] = useState(false);
 
-    // img "done"
-    const [eat1, setEat1] = useState(false);
-    const [eat2, setEat2] = useState(false);
-    const [eat3, setEat3] = useState(false);
-    const [eat4, setEat4] = useState(false);
-    const [eat5, setEat5] = useState(false);
-    const [eat6, setEat6] = useState(false);
-    const [eat7, setEat7] = useState(false);
-    const [eat8, setEat8] = useState(false);
-    const [eat9, setEat9] = useState(false);
-    const [eat10, setEat10] = useState(false);
-
-    // food counter
-    const [count1, setCount1] = useState(0);
-    const [count2, setCount2] = useState(0);
-    const [count3, setCount3] = useState(0);
-    const [count4, setCount4] = useState(0);
-    const [count5, setCount5] = useState(0);
-    const [count6, setCount6] = useState(0);
-    const [count7, setCount7] = useState(0);
-    const [count8, setCount8] = useState(0);
-    const [count9, setCount9] = useState(0);
-    const [count10, setCount10] = useState(0);
-    const count = [count1, count2, count3, count4, count5, count6, count7, count8, count9, count10]
-    const totalCount = count.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-    // mancarea se duce in sac
+    // mancarea se duce in sac +done
     const clickHandler1 = function () {
-        if (eat1) {
-            setEat1(false)
-            setCount1(0)
+        if (food.eat1) {
+            setFood({
+                ...food,
+                eat1: false
+            })
+            setCounts({
+                ...counts,
+                count1: 0
+            })
         } else {
-            setEat1(true)
-            setCount1(1)
+            setFood({
+                ...food,
+                eat1: true
+            })
+            setCounts({
+                ...counts,
+                count1: 1
+            })
         }
     }
     const clickHandler2 = function () {
-        if (eat2) {
-            setEat2(false)
-            setCount2(0)
+        if (food.eat2) {
+            setFood({
+                ...food,
+                eat2: false
+            })
+            setCounts({
+                ...counts,
+                count2: 0
+            })
         } else {
-            setEat2(true)
-            setCount2(1)
+            setFood({
+                ...food,
+                eat2: true
+            })
+            setCounts({
+                ...counts,
+                count2: 1
+            })
         }
     }
     const clickHandler3 = function () {
-        if (eat3) {
-            setEat3(false)
-            setCount3(0)
+        if (food.eat3) {
+            setFood({
+                ...food,
+                eat3: false
+            })
+            setCounts({
+                ...counts,
+                count3: 0
+            })
         } else {
-            setEat3(true)
-            setCount3(1)
+            setFood({
+                ...food,
+                eat3: true
+            })
+            setCounts({
+                ...counts,
+                count3: 1
+            })
         }
     }
     const clickHandler4 = function () {
-        console.log('here')
-        if (eat4) {
-            setEat4(false)
-            setCount4(0)
+        if (food.eat4) {
+            setFood({
+                eat4: false
+            })
+            setCounts({
+                ...counts,
+                count4: 0
+            })
         } else {
-            setEat4(true)
-            setCount4(1)
+            setFood({
+                ...food,
+                eat4: true
+            })
+            setCounts({
+                ...counts,
+                count4: 1
+            })
         }
     }
     const clickHandler5 = function () {
-        if (eat5) {
-            setEat5(false)
-            setCount5(0)
+        if (food.eat5) {
+            setFood({
+                ...food,
+                eat5: false
+            })
+            setCounts({
+                ...counts,
+                count5: 0
+            })
         } else {
-            setEat5(true)
-            setCount5(1)
+            setFood({
+                ...food,
+                eat5: true
+            })
+            setCounts({
+                ...counts,
+                count5: 1
+            })
         }
     }
     const clickHandler6 = function () {
-        console.log('eat6', eat6)
-        if (eat6) {
-            setEat6(false)
-            setCount6(0)
+        if (food.eat6) {
+            setFood({
+                ...food,
+                eat6: false
+            })
+            setCounts({
+                ...counts,
+                count6: 0
+            })
         } else {
-            setEat6(true)
-            setCount6(1)
+            setFood({
+                ...food,
+                eat6: true
+            })
+            setCounts({
+                ...counts,
+                count6: 1
+            })
         }
     }
     const clickHandler7 = function () {
-        if (eat7) {
-            setEat7(false)
-            setCount7(0)
+        if (food.eat7) {
+            setFood({
+                ...food,
+                eat7: false
+            })
+            setCounts({
+                ...counts,
+                count7: 0
+            })
         } else {
-            setEat7(true)
-            setCount7(1)
+            setFood({
+                ...food,
+                eat7: true
+            })
+            setCounts({
+                ...counts,
+                count7: 1
+            })
         }
     }
     const clickHandler8 = function () {
-        if (eat8) {
-            setEat8(false)
-            setCount8(0)
+        if (food.eat8) {
+            setFood({
+                ...food,
+                eat8: false
+            })
+            setCounts({
+                ...counts,
+                count8: 0
+            })
         } else {
-            setEat8(true)
-            setCount8(1)
+            setFood({
+                ...food,
+                eat8: true
+            })
+            setCounts({
+                ...counts,
+                count8: 1
+            })
         }
     }
     const clickHandler9 = function () {
         setOpen9(true);
-        if (eat9) {
-            setEat9(false)
-            setCount9(0)
+        if (food.eat9) {
+            setFood({
+                ...food,
+                eat9: false
+            })
+            setCounts({
+                ...counts,
+                count9: 0
+            })
         } else {
-            setEat9(true)
-            setCount9(1)
+            setFood({
+                ...food,
+                eat9: true
+            })
+            setCounts({
+                ...counts,
+                count9: 1
+            })
         }
     }
     const clickHandler10 = function () {
         setOpen10(true);
-        if (eat10) {
-            setEat10(false)
-            setCount10(0)
+        if (food.eat10) {
+            setFood({
+                ...food,
+                eat10: false
+            })
+            setCounts({
+                ...counts,
+                count10: 0
+            })
         } else {
-            setEat10(true)
-            setCount10(1)
+            setFood({
+                ...food,
+                eat10: true
+            })
+            setCounts({
+                ...counts,
+                count10: 1
+            })
         }
     }
 
-    const resetHandler = function () {
-        setEat1(false);
-        setEat2(false);
-        setEat3(false);
-        setEat4(false);
-        setEat5(false);
-        setEat6(false);
-        setEat7(false);
-        setEat8(false);
-        setEat9(false);
-        setEat10(false);
-        setCount1(0);
-        setCount2(0);
-        setCount3(0);
-        setCount4(0);
-        setCount5(0);
-        setCount6(0);
-        setCount7(0);
-        setCount8(0);
-        setCount9(0);
-        setCount10(0);
+    // varianta scurta
+    const details = [
+        { className: `${classes.inside} ${classes.milk_inside}`, src: milk, alt: milk },
+        { className: `${classes.inside} ${classes.meat_inside}`, src: meat, alt: meat },
+        { className: `${classes.inside} ${classes.food1_inside}`, src: food1, alt: food1 }
+    ];
+
+    const foodDefault = {
+        eat1: false, eat2: false, eat3: false, eat4: false, eat5: false, eat6: false, eat7: false, eat8: false, eat9: false, eat10: false,
+    };
+
+    // const foodDefault_new = [
+    //     { eat: false }, { eat: false }, { eat: false }, { eat: false }, { eat: false }, { eat: false }, { eat: false }, { eat: false }, { eat: false }, { eat: false }
+    // ]
+    // pentru done + sac
+    const [food, setFood] = useState(foodDefault);
+
+    // food counter
+    const countDefault = {
+        count1: 0, count2: 0, count3: 0, count4: 0, count5: 0, count6: 0, count7: 0, count8: 0, count9: 0, count10: 0
     }
+    const [counts, setCounts] = useState(countDefault);
+
+    // food counter
+    const count = [counts.count1, counts.count2, counts.count3, counts.count4, counts.count5,
+    counts.count6, counts.count7, counts.count8, counts.count9, counts.count10];
+
+    const totalCount = count.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    const resetHandler = function () {
+        setFood(foodDefault)
+        setCounts(countDefault);
+    }
+
 
     return <div>
         <button className={classes.btn_home} onClick={home}>⏪  Home </button>
@@ -185,7 +287,7 @@ function FeedTheCat(props) {
         <AlertModal open9={open9} />
         <AlertModal open10={open10} />
         <section className={classes.section_left}>
-            <h1 className={classes.hello}>Hello{params.user}...</h1>
+            <h1 className={classes.hello}>Hello {params.name}...</h1>
             <p className={classes.p1}>Would you feed the cat?</p>
             <p className={classes.p2}>Here's how much I ate today: {totalCount} / 8</p>
 
@@ -193,16 +295,16 @@ function FeedTheCat(props) {
                 <img className={classes.cat} src={cat} width="150" height="113" alt="cat"></img>
                 <img className={classes.bag} src={bag} width="150" height="113" alt="bag"></img>
                 <img className={classes.cat_bag} src={cat_bag} width="150" height="113" alt="cat_bag"></img>
-                <img className={`${classes.inside} ${classes.milk_inside} ${eat1 ? "" : classes.hidden} `} src={milk} width="150" height="113" alt="milk"></img>
-                <img className={`${classes.inside} ${classes.meat_inside} ${eat2 ? "" : classes.hidden} `} src={meat} width="150" height="113" alt="meat"></img>
-                <img className={`${classes.inside} ${classes.food1_inside} ${eat3 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
-                <img className={`${classes.inside} ${classes.food2_inside} ${eat4 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
-                <img className={`${classes.inside} ${classes.food3_inside} ${eat5 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
-                <img className={`${classes.inside} ${classes.food4_inside} ${eat6 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
-                <img className={`${classes.inside} ${classes.food5_inside} ${eat7 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
-                <img className={`${classes.inside} ${classes.food6_inside} ${eat8 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
-                <img className={`${classes.inside} ${classes.food7_inside} ${eat9 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
-                <img className={`${classes.inside} ${classes.food8_inside} ${eat10 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
+                <img className={`${classes.inside} ${classes.milk_inside} ${food.eat1 ? "" : classes.hidden} `} src={milk} width="150" height="113" alt="milk"></img>
+                <img className={`${classes.inside} ${classes.meat_inside} ${food.eat2 ? "" : classes.hidden} `} src={meat} width="150" height="113" alt="meat"></img>
+                <img className={`${classes.inside} ${classes.food1_inside} ${food.eat3 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
+                <img className={`${classes.inside} ${classes.food2_inside} ${food.eat4 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
+                <img className={`${classes.inside} ${classes.food3_inside} ${food.eat5 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
+                <img className={`${classes.inside} ${classes.food4_inside} ${food.eat6 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
+                <img className={`${classes.inside} ${classes.food5_inside} ${food.eat7 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
+                <img className={`${classes.inside} ${classes.food6_inside} ${food.eat8 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
+                <img className={`${classes.inside} ${classes.food7_inside} ${food.eat9 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
+                <img className={`${classes.inside} ${classes.food8_inside} ${food.eat10 ? "" : classes.hidden}`} src={food1} width="150" height="113" alt="food1"></img>
             </div>
         </section>
         <section className={classes.section_right}>
@@ -213,43 +315,43 @@ function FeedTheCat(props) {
                 <img className={classes.cat_lie} src={cat_lie} width="150" height="113" alt="cat_above"></img>
                 <button className={classes.btn} onClick={clickHandler1}>
                     <img className={`${classes.box_shadow} ${classes.milk}`} src={milk} width="150" height="113" alt="milk"></img>
-                    <img className={`${classes.done} ${classes.done_left} ${eat1 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
+                    <img className={`${classes.done} ${classes.done_left} ${food.eat1 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
                 </button>
                 <button className={classes.btn} onClick={clickHandler2}>
                     <img className={`${classes.box_shadow} ${classes.meat}`} src={meat} width="150" height="113" alt="meat"></img>
-                    <img className={`${classes.done} ${classes.done_right} ${eat2 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
+                    <img className={`${classes.done} ${classes.done_right} ${food.eat2 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
                 </button>
                 <button className={classes.btn} onClick={clickHandler3}>
                     <img className={`${classes.box_shadow} ${classes.food1}`} src={food1} width="150" height="113" alt="food1"></img>
-                    <img className={` ${classes.done} ${classes.done1} ${eat3 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
+                    <img className={` ${classes.done} ${classes.done1} ${food.eat3 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
                 </button>
                 <button className={classes.btn} onClick={clickHandler4}>
                     <img className={`${classes.box_shadow} ${classes.food2}`} src={food1} width="150" height="113" alt="food1"></img>
-                    <img className={` ${classes.done} ${classes.done2} ${eat4 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
+                    <img className={` ${classes.done} ${classes.done2} ${food.eat4 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
                 </button>
                 <button className={classes.btn} onClick={clickHandler5}>
                     <img className={`${classes.box_shadow} ${classes.food3}`} src={food1} width="150" height="113" alt="food2"></img>
-                    <img className={` ${classes.done} ${classes.done3} ${eat5 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
+                    <img className={` ${classes.done} ${classes.done3} ${food.eat5 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
                 </button>
                 <button className={classes.btn} onClick={clickHandler6}>
                     <img className={`${classes.box_shadow} ${classes.food4}`} src={food1} width="150" height="113" alt="food2"></img>
-                    <img className={` ${classes.done} ${classes.done4} ${eat6 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
+                    <img className={` ${classes.done} ${classes.done4} ${food.eat6 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
                 </button>
                 <button className={classes.btn} onClick={clickHandler7}>
                     <img className={`${classes.box_shadow} ${classes.food5}`} src={food1} width="150" height="113" alt="food2"></img>
-                    <img className={` ${classes.done} ${classes.done5} ${eat7 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
+                    <img className={` ${classes.done} ${classes.done5} ${food.eat7 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
                 </button>
                 <button className={classes.btn} onClick={clickHandler8}>
                     <img className={`${classes.box_shadow} ${classes.food6}`} src={food1} width="150" height="113" alt="food2"></img>
-                    <img className={` ${classes.done} ${classes.done6} ${eat8 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
+                    <img className={` ${classes.done} ${classes.done6} ${food.eat8 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
                 </button>
                 <button className={classes.btn} onClick={clickHandler9}>
                     <img className={`${classes.box_shadow} ${classes.food7}`} src={food1} width="150" height="113" alt="food2"></img>
-                    <img className={` ${classes.done} ${classes.done7} ${eat9 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
+                    <img className={` ${classes.done} ${classes.done7} ${food.eat9 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
                 </button>
                 <button className={classes.btn} onClick={clickHandler10}>
                     <img className={`${classes.box_shadow} ${classes.food8}`} src={food1} width="150" height="113" alt="food2"></img>
-                    <img className={` ${classes.done} ${classes.done8} ${eat10 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
+                    <img className={` ${classes.done} ${classes.done8} ${food.eat10 ? "" : classes.hidden} `} src={done} width="150" height="113" alt="done"></img>
                 </button>
                 <p className={classes.p_warning}>Extra food!</p>
                 <img className={classes.extra_cats} src={extra_cats} width="150" height="113" alt="extra_cats"></img>
