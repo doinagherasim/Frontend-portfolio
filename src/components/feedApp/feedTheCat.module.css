@@ -18,7 +18,7 @@
   transform: rotate(83deg);
   margin-left: -103px;
 }
-.inside {
+.inTheBag {
   width: 80px;
   height: 80px;
   float: right;
@@ -26,52 +26,52 @@
   top: 0px;
   left: 0px;
 }
-.milk_inside {
+.food1_inTheBag {
   margin-top: 445px;
   margin-left: 471px;
   transform: rotate(33deg);
 }
-.meat_inside {
+.food2_inTheBag {
   margin-top: 451px;
   margin-left: 525px;
   transform: rotate(18deg);
 }
-.food1_inside {
+.food3_inTheBag {
   margin-top: 445px;
   margin-left: 566px;
   transform: rotate(-22deg);
 }
-.food2_inside {
+.food4_inTheBag {
   margin-top: 411px;
   margin-left: 520px;
 }
-.food3_inside {
+.food5_inTheBag {
   margin-top: 393px;
   margin-left: 465px;
   transform: rotate(-16deg);
 }
-.food4_inside {
+.food6_inTheBag {
   margin-top: 398px;
   margin-left: 568px;
   transform: rotate(11deg);
 }
-.food5_inside {
+.food7_inTheBag {
   margin-top: 363px;
   margin-left: 523px;
 }
-.food6_inside {
+.food8_inTheBag {
   margin-top: 353px;
   margin-left: 472px;
   transform: rotate(3deg);
   z-index: -1;
 }
-.food7_inside {
+.food9_inTheBag {
   margin-top: 321px;
   margin-left: 522px;
   transform: rotate(12deg);
   z-index: -1;
 }
-.food8_inside {
+.food10_inTheBag {
   margin-top: 348px;
   margin-left: 570px;
   transform: rotate(22deg);
@@ -127,87 +127,87 @@
 .hidden {
   display: none;
 }
-.milk {
+.food1_position{
   margin-top: 173px;
   margin-left: 150px;
   transform: rotate(-28deg);
 }
-.done_left {
+.done1{
   margin-top: 180px;
   margin-left: 155px;
 }
-.meat {
+.food2_position {
   margin-top: 173px;
   margin-left: 469px;
   transform: rotate(28deg);
 }
-.done_right {
+.done2{
   margin-top: 180px;
   margin-left: 473px;
 }
-.food1 {
+.food3_position {
   margin-top: 173px;
   margin-left: 250px;
 }
-.done1 {
+.done3 {
   margin-top: 180px;
   margin-left: 255px;
 }
-.food2 {
+.food4_position {
   margin-top: 173px;
   margin-left: 320px;
 }
-.done2 {
+.done4 {
   margin-top: 180px;
   margin-left: 326px;
 }
-.food3 {
+.food5_position {
   margin-top: 270px;
   margin-left: 184px;
 }
-.done3 {
+.done5 {
   margin-top: 277px;
   margin-left: 190px;
 }
-.food4 {
+.food6_position {
   margin-top: 270px;
   margin-left: 254px;
 }
-.done4 {
+.done6 {
   margin-top: 277px;
   margin-left: 260px;
 }
-.food5 {
+.food7_position {
   margin-top: 270px;
   margin-left: 324px;
 }
-.done5 {
+.done7 {
   margin-top: 277px;
   margin-left: 330px;
 }
-.food6 {
+.food8_position {
   margin-top: 366px;
   margin-left: 234px;
 }
-.done6 {
+.done8 {
   margin-top: 374px;
   margin-left: 240px;
 }
-.food7 {
+.food9_position {
   margin-top: 474px;
   margin-left: 126px;
   border: 2px solid #ff7077;
 }
-.done7 {
+.done9 {
   margin-top: 481px;
   margin-left: 132px;
 }
-.food8 {
+.food10_position {
   margin-top: 474px;
   margin-left: 300px;
   border: 2px solid #ff7077;
 }
-.done8 {
+.done10 {
   margin-top: 481px;
   margin-left: 306px;
 }
@@ -227,7 +227,7 @@
   top: 0px;
   color: white;
   margin-top: 424px;
-  margin-left: 165px;
+  margin-left: 283px;
 }
 .extra {
   float: right;
@@ -235,7 +235,7 @@
   top: 0px;
   color: white;
   margin-top: 533px;
-  margin-left: 200px;
+  margin-left: 325px;
   transform: rotate(-18deg);
   width: 103px;
   height: 79px;
@@ -258,7 +258,7 @@
   margin-left: 200px;
   margin-top: 30px;
 }
-.section_left {
+.section_bag {
   width: 700px;
   height: 300px;
   padding: 20px;
@@ -266,7 +266,7 @@
   margin-left: 100px;
   top: 0px;
 }
-.section_right {
+.section_shelve {
   top: 0px;
   width: 700px;
   height: 300px;

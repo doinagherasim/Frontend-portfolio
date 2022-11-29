@@ -1,7 +1,7 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import Login from "./components/login/Login";
-import FeedTheCat from './components/feedApp/feedTheCat';
+import FeedTheCat from "./components/feedApp/feedTheCat";
 
 function App() {
   return (

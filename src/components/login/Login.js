@@ -1,6 +1,6 @@
-import classes from './login.module.css'
-import catImg1 from '../../assets/catImg1.png'
-import { useNavigate } from 'react-router-dom'
+import classes from "./login.module.css";
+import catImg1 from "../../assets/catImg1.png";
+import { useNavigate } from "react-router-dom";
 
 
 function Login() {
@@ -8,10 +8,10 @@ function Login() {
 
     const foodAppTiberiu = () => {
         navigate("/feedthecat/Tiberiu");
-    }
+    };
     const foodAppDoina = () => {
         navigate("/feedthecat/Doina");
-    }
+    };
 
     return <div>
         <div className={classes.div_wrapper}>
@@ -21,7 +21,7 @@ function Login() {
             <button className={classes.btn_left} onClick={foodAppTiberiu}>Tiberiu</button>
             <button className={classes.btn_right} onClick={foodAppDoina}>Doina</button>
         </div>
-    </div >
+    </div >;
 };
 
 export default Login;
