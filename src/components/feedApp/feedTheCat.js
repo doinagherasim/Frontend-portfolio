@@ -29,21 +29,16 @@ function FeedTheCat() {
         navigateHome("/");
     };
 
-    
+    // food track
+    // food default
     const foodDefault = [
         { id: 1, theCatAte: false }, { id: 2, theCatAte: false }, { id: 3, theCatAte: false}, 
         { id: 4, theCatAte: false }, { id: 5, theCatAte: false}, { id: 6, theCatAte: false }, 
-        { id: 7, theCatAte: false }, { id: 8, theCatAte: false }, { id: 9, theCatAte: false }, 
+        { id: 7, theCatAte: false }, { id: 8, theCatAte: false }, { id: 9, theCatAte: false}, 
         { id: 10, theCatAte: false}
     ];
-
-    // Alert 
-    // const [alertExtraFood, setAlertExtraFood]=useState(alertDefault);
-    const [alertFood, setAlertFood]=useState(false);
-    // const [alertFood9, setAlertFood9]=useState(false);
-    // const [alertFood10, setAlertFood10]=useState(false);
+    
     const [foods, setFoods] = useState(foodDefault);
-
     // food counter
     const totalFoodCount = foods.reduce(function (sum, food) {
         if (food.theCatAte === true) {
@@ -54,19 +49,42 @@ function FeedTheCat() {
         };
     }, 0);
 
-    const onClickFood  = function (index) {
-        const newFood = [...foods];
-        if (foods[index].theCatAte === true ) {
-            newFood[index].theCatAte = false;
-            setFoods(newFood);
-        } else if (foods[index].theCatAte === false) {
-            console.log("index", index);
-            newFood[index].theCatAte = true;
-            setFoods(newFood);
-        } else if (foods.theCatAte === true){
-            console.log("all true");
+
+    // Alert 
+    const [alertFood, setAlertFood]=useState(false);
+    // count for first 8 services
+    const totalFoodCountWithoutAlerts = foods.reduce(function (sum, food, index) {
+        if (food.theCatAte === true && (index < 8)) {
+            return sum + 1;
         }
-};
+        else {
+            return sum;
+        };
+    }, 0);
+
+    const onClickFood  = function (index) {
+        // alert if first 8 are not checked
+        if (index > 7 && totalFoodCountWithoutAlerts < 8) {
+            return alert("Please check 1-8 servings first.");
+        }
+        // check food (done + goes in the bag)
+        const newFood = [...foods];
+        if (foods[index].theCatAte === true ){
+            newFood[index].theCatAte = false;
+        } else if (foods[index].theCatAte === false) {
+            newFood[index].theCatAte = true;
+        }
+        // alerta OMG for extra food serving 9 and 10
+        if (totalFoodCountWithoutAlerts >= 8) {
+            setAlertFood(true);
+        };
+
+        setFoods(newFood);
+    };
+
+    const closeAlert = () => {
+        setAlertFood(false);
+    };
 
     const resetHandler = function () {
             setFoods(foodDefault);
@@ -79,14 +97,11 @@ function FeedTheCat() {
     {key:6, foodInTheBag: classes.food7_inTheBag, src: food1, foodPosition: classes.food7_position, done: classes.done7}, {key:7, foodInTheBag: classes.food8_inTheBag, src: food1, foodPosition: classes.food8_position, done: classes.done8},
     {key:8, foodInTheBag: classes.food9_inTheBag, src: food1, foodPosition: classes.food9_position, done: classes.done9}, {key:9, foodInTheBag: classes.food10_inTheBag, src: food1, foodPosition: classes.food10_position, done: classes.done10}];
 
-
     return <div>
         <button className={classes.btn_home} onClick={home}>⏪  Home </button>
         <img className={classes.bground} src={bground} width="150" height="113" alt="bground"></img>
         <div>
-        <AlertModal alertFood={alertFood} />
-        {/* <AlertModal alertFood9={alertFood9} />
-        <AlertModal alertFood10={alertFood10} /> */}
+        {alertFood && <AlertModal closeAlert={closeAlert} />}
         </div>
         <section className={classes.section_bag}>
             <h1 className={classes.hello}>Hello {params.name}...</h1>

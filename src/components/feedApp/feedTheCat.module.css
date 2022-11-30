@@ -32,14 +32,13 @@
   transform: rotate(33deg);
 }
 .food2_inTheBag {
-  margin-top: 451px;
-  margin-left: 525px;
-  transform: rotate(18deg);
-}
-.food3_inTheBag {
   margin-top: 445px;
   margin-left: 566px;
   transform: rotate(-22deg);
+}
+.food3_inTheBag {
+  margin-top: 449px;
+  margin-left: 525px;
 }
 .food4_inTheBag {
   margin-top: 411px;
@@ -138,28 +137,27 @@
 }
 .food2_position {
   margin-top: 173px;
-  margin-left: 469px;
-  transform: rotate(28deg);
+  margin-left: 255px;
 }
 .done2{
   margin-top: 180px;
-  margin-left: 473px;
+  margin-left: 260px;
 }
 .food3_position {
   margin-top: 173px;
-  margin-left: 250px;
+  margin-left: 340px;
 }
 .done3 {
   margin-top: 180px;
-  margin-left: 255px;
+  margin-left: 344px;
 }
 .food4_position {
   margin-top: 173px;
-  margin-left: 320px;
+  margin-left: 449px;
 }
 .done4 {
   margin-top: 180px;
-  margin-left: 326px;
+  margin-left: 454px;
 }
 .food5_position {
   margin-top: 270px;
