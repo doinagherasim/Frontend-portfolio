@@ -1,76 +1,68 @@
-.div_wrapper {
-  width: 1000px;
-  height: 700px;
-  margin-left: auto;
-  margin-right: auto;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70%;
+  height: 30em;
+  margin: 0 auto;
+  margin-top: 10%;
 }
 
-.yam {
-  font-size: 60px;
-  font-family: cooperplate;
+.title {
+  font-size: 3rem;
+  font-family: "lora" serif;
   text-align: center;
-  margin-top: 150px;
+  color:#2b1103;
+  margin-bottom: .5em;
 }
 
-.img1 {
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
-  height: 150px;
-  display: block;
+.btn_wrapper{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 5em;
+  align-items: center;
+  padding: 0.5em;
+  margin: 0 auto;
 }
 
-.p {
-  font-size: 25px;
-  text-align: center;
-  margin-top: -20px;
-}
-
-.btn_left {
-  float: left;
+.btn {
+  margin: 0.3em;
+  padding: 0.5em;
   background-color: #ffb067;
-  width: 200px;
-  height: 60px;
-  margin-top: 190px;
-  margin-left: 190px;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 10px;
+  width: 20rem;
+  height: 3.3em;
+  font-family: "lora" serif;
+  color:white;
+  font-size: 1rem;
+  border-radius: 0.7em;
   cursor: pointer;
 }
 
-.btn_right {
-  float: right;
-  background-color: #ffb067;
-  width: 200px;
-  height: 60px;
-  margin-top: 190px;
-  margin-right: 190px;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.btn_right:active {
-  background-color: grey;
+.btn:active {
+  background-color: #0000FF;
   color: white;
   box-shadow: 2px 2px 5px #2b1103;
   cursor: pointer;
 }
-.btn_left:active {
-  background-color: grey;
-  color: white;
-  box-shadow: 2px 2px 5px #2b1103;
-  cursor: pointer;
-}
-.btn_right:hover {
-  background-color: grey;
+.btn:hover {
+  background-color: #0000FF;
   color: white;
   cursor: pointer;
 }
-.btn_left:hover {
-  background-color: grey;
-  color: white;
-  cursor: pointer;
+
+.btn_1{
+  background-color: #76B947;
+}
+
+.btn_2{
+  background-color: #FB6090;
+}
+
+.btn_3{
+  background-color: #FD7F20;
+}
+
+.btn_4{
+  background-color: #d420fd;
 }

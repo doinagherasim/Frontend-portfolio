@@ -1,0 +1,76 @@
+.container {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color:  rgb(255, 173, 65);
+}
+
+.todo_wrap {
+    position: relative;
+    top: 140px;
+    margin: 0 auto;
+    width: 500px;
+    background-color: rgb(41, 33, 33);
+    border: 3px solid rgb(36, 110, 194);
+    color: white;
+    border-radius: 20px;
+}
+
+.title {
+    text-align: center;
+}
+
+.tasks {
+    bottom: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task {
+    margin: 0 auto;
+    margin-bottom: 5px;
+    display: flex;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 400px;
+    float: left;
+}
+
+.text {
+    margin: 5px;
+    width: 270px;
+}
+
+.btn {
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    border: 1px solid white;
+}
+
+.btn_complete {
+    background-color: rgb(12, 124, 251);
+}
+
+.btn_X {
+   background-color: red;
+}
+
+.btn_add {
+    background-color: rgb(41, 33, 33);
+    height: 35px; 
+}
+
+.input {
+    text-align: center;
+    padding: 20px;
+}
+
+input {
+    width: 300px;
+    height: 35px;
+}
+
+.ligne { 
+    text-decoration: line-through;
+}
