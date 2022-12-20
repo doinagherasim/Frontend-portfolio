@@ -8,21 +8,21 @@ function ToDoList () {
     const [tasks, setTasks] = useState([
 {
     id: 0,
-    title: "Read 5 pages",
+    title: "Task 1",
     complete: true
 },
     {id: 1,
-        title: "Read 3 pages",
+        title: "Task 2",
         complete: false 
 },
     {id: 2,
-        title: "Read 2 pages",
+        title: "Task 3",
         complete: false 
 }
     ]);
 
-    // input field, add new task to the others
-    const addItem = (e) => {
+    // Creating a new task
+    const addTask = (e) => {
         e.preventDefault();
         const newTask = {
             id: e.target.item.index,
@@ -33,25 +33,58 @@ function ToDoList () {
         setTasks([...tasks, newTask]);
     };
 
-    // defining complete line through
+    // Completing a task
+    const completeTask = (index) => {
+        const newTasks = [...tasks];
+        newTasks[index].complete = true;
+        setTasks(newTasks);
+    };
 
+    // Removing a task
+    const removeTask = () => {
+        const newTasks = [...tasks];
+        newTasks.splice(index, 1);
+        setTasks(newTasks);
+    };
+
+    // Remaining tasks
+     const pendingTasks = tasks.reduce(function (sum, task){
+           if(task.complete === false){
+            return sum +1; 
+           } else {
+            return sum;
+           }
+     },0);
+
+    // Completed tasks
+    const completedTasks = tasks.reduce((sum,task) => {
+        if(task.complete === true){
+            return sum +1;
+        } else {
+            return sum;
+        }
+    },0);
 
     return (
         <div className={classes.container}>
             <div className={classes.todo_wrap}>
-                <h2 className={classes.title}><i>TO DO LIST (0)</i></h2>
+                <h2 className={classes.title}><i>TO DO LIST</i></h2>
+                <div className={classes.status_wrap}>
+                <p className={classes.status}>Completed tasks ({completedTasks})</p>
+                <p className={classes.status}>Pending tasks ({pendingTasks})</p>
+                </div>
                 <div className={classes.tasks}>
                     {
                         tasks.map((item, index)=>
-                            <div className={classes.task} key={index} index={index}>
-                                <p className={`${classes.text} ${item.complete ? "classes.length"}`} >{item.title}</p>
-                                <button className={`${classes.btn} ${classes.btn_complete}`}>Complete</button>
-                                <button className={`${classes.btn} ${classes.btn_X}`}>X</button>
+                            <div className={classes.task_wrap} key={index} index={index}>
+                                <p className={`${classes.task} ${tasks[index].complete ? classes.complete : ""}`} >{item.title}</p>
+                                <button className={`${classes.btn} ${classes.btn_complete}`}  onClick={()=>completeTask(index)}>Complete</button>
+                                <button className={`${classes.btn} ${classes.btn_X}`} onClick={() => {removeTask(index);}}>X</button>
                             </div>
                         )
                     }
                 </div>
-                <form onSubmit={addItem} className={classes.input}>
+                <form onSubmit={addTask} className={classes.input}>
                     <input type="text" name="item" id="index" placeholder="Add a new task"/>
                     <button type="submit" className={`${classes.btn} ${classes.btn_add}`}>Add</button>
                 </form>

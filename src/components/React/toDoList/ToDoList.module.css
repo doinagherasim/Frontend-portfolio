@@ -2,7 +2,7 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color:  rgb(255, 173, 65);
+    background-color:  #E9EAEC;
 }
 
 .todo_wrap {
@@ -10,8 +10,8 @@
     top: 140px;
     margin: 0 auto;
     width: 500px;
-    background-color: rgb(41, 33, 33);
-    border: 3px solid rgb(36, 110, 194);
+    background-color: #333652;
+    border: 3px solid #FAD02C;
     color: white;
     border-radius: 20px;
 }
@@ -26,7 +26,7 @@
     flex-direction: column;
 }
 
-.task {
+.task_wrap {
     margin: 0 auto;
     margin-bottom: 5px;
     display: flex;
@@ -36,7 +36,7 @@
     float: left;
 }
 
-.text {
+.task {
     margin: 5px;
     width: 270px;
 }
@@ -49,7 +49,8 @@
 }
 
 .btn_complete {
-    background-color: rgb(12, 124, 251);
+    color: black;
+    background-color: #FAD02C;
 }
 
 .btn_X {
@@ -71,6 +72,14 @@ input {
     height: 35px;
 }
 
-.ligne { 
+.complete { 
     text-decoration: line-through;
+}
+
+.status_wrap{
+    display: flex;
+}
+
+.status {
+    margin-left: 70px;
 }
