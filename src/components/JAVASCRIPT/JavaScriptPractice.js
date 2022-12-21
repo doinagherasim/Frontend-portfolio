@@ -1,32 +1,82 @@
 import classes from "./JavaScriptPractice.module.css";
+import {React, useState} from "react";
 
 function JavaScriptPractice () {
     // question 1
-    const numbers = [2,4,6,7,8];
-    const sumFunction = function (array){
-        const sum = array.reduce((accumulator, current) => accumulator + current);
-        return sum;
-    };
+    // const [password, setPassword] = useState("");
+    // const [passwordLength, setPasswordLength] = useState(8);
+  
+    // const generatePassword = () => {
+    //   let pwd = "";
+    //   for (let i = 0; i < passwordLength; i++) {
+    //     const charType = Math.floor(Math.random() * 4);
+    //     if (charType === 0) {
+    //       pwd += String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+    //     } else if (charType === 1) {
+    //       pwd += String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+    //     } else if (charType === 2) {
+    //       pwd += Math.floor(Math.random() * 10);
+    //     } else {
+    //       const specialChars = "!@#$%^&*()";
+    //       pwd += specialChars[Math.floor(Math.random() * specialChars.length)];
+    //     }
+    //   }
+    //   setPassword(pwd);
+    // };
 
-    // question 2
-    const string = "DOINA";
-    const reverseStr = function(str) {
-        const string = [...str].reverse().join("");
-        return string;
-    };
+    // part 2
 
-    // question 3- password of 8 characters
-
+    // const [passwordLength, setPasswordLength] = useState(0);
+    // const [password, setPassword] = useState("");
+  
+    // const characterList = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+  
+    // const generatePassword = (event) => {
+    //   event.preventDefault();
+    //   let newPassword = "";
+    //   for (let i = 0; i < passwordLength; i++) {
+    //     newPassword += characterList[Math.floor(Math.random() * characterList.length)];
+    //   }
+    //   setPassword(newPassword);
+    // };
+  
+    // PART 3
+    const [value, setValue] = useState(50);
 
     return (
-        <div>
-            <p>1. Write a function that takes an array of numbers and returns the sum of the numbers</p>
-            <p>{sumFunction(numbers)}</p>
-            <p>2. Write a function that takes a string and returns a new string with the characters in reverse order
-</p>
-            <p>{reverseStr(string)}</p>
-            <p>3. Write a program that generates a random password with a specified length and character set</p>
-        </div>
+      <div>
+        {/* <form>
+          <label htmlFor="password-length">Password Length:</label>
+          <input
+            type="number"
+            id="password-length"
+            value={passwordLength}
+            onChange={e => setPasswordLength(e.target.value)}
+          />
+          <button type="button" onClick={generatePassword}>Generate Password</button>
+        </form>
+        <p>{password}</p> */}
+        {/* <p>A DOUA</p>
+        <form onSubmit={generatePassword}>
+        <label htmlFor="passwordLength">Password Length:</label>
+        <input
+          type="number"
+          id="passwordLength"
+          value={passwordLength}
+          onChange={(event) => setPasswordLength(event.target.value)}
+        />
+        <button type="submit">Generate Password</button>
+      </form>
+      {password && <p>{password}</p>} */}
+       <input
+        type="range"
+        min="0"
+        max="100"
+        value={value}
+        onChange={event => setValue(event.target.value)}
+      />
+      <span>{value}</span>
+      </div>
     );
 };
 

@@ -1,28 +1,22 @@
 import classes from "./passwordGenerator.module.css";
+import {React, useState} from "react";
 
 function PasswordGenerator () {
+    // 1. list of password options 
     const opstions = [
-        {
-            id: 1,
-            option: "Uppercase (A-Z)",
-            checked: true
-        },
-        {
-            id: 2,
-            option: "Lowercase (a-z)",
-            checked: true
-        },
-        {
-            id: 3,
-            option: "Numbers (0-9)",
-            checked: true
-        },
-        {
-            id: 4,
-            option: "Symbols (!@%&+)",
-            checked: true
-        }
+        { id: 1, option: "Uppercase (A-Z)", checked: true },
+        { id: 2, option: "Lowercase (a-z)", checked: true },
+        { id: 3, option: "Numbers (0-9)", checked: true },
+        { id: 4, option: "Symbols (!@%&+)", checked: true }
     ];
+
+    // 2. Slider values onChange
+
+    const[sliderValue, setSliderValue] = useState(6);
+
+    const changeSliderValue = (event) => {
+        setSliderValue(event.target.value);
+    };
 
     return (
         <div className={classes.container}>
@@ -37,9 +31,9 @@ function PasswordGenerator () {
                     <p>Refresh</p>
                 </div>
 
-                <div className={classes.range_wrap}>
-                    <label className={classes.range_label}>Length 8</label>
-                    <input className={classes.range} max="15" min="4" type="range" step="1"></input>   
+                <div className={classes.slider_wrap}>
+                    <label className={classes.slider_label}>Length ({sliderValue})</label>
+                    <input className={classes.slider} max="15" min="6" type="range" step="1" value={sliderValue} onChange={changeSliderValue}></input>   
                     { opstions.map((item) => 
                        <div className={classes.pass_settings}> 
                        <p className={classes.pass_option}>{item.option}</p>  
