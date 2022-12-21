@@ -14,9 +14,17 @@ function PasswordGenerator () {
 
     const[sliderValue, setSliderValue] = useState(6);
 
-    const changeSliderValue = (event) => {
-        setSliderValue(event.target.value);
-    };
+   const changeSliderValue = (event) => {
+    setSliderValue(event.target.value);
+   };
+
+   // 3. default values for each pass option
+   const uppercases = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+   const lowercases = "abcdefghijklmnopqrstuvwxyz";
+   const numbers = "0123456789";
+   const symbols = "!@#$%^&*()_+";
+
+   // 4. 
 
     return (
         <div className={classes.container}>
