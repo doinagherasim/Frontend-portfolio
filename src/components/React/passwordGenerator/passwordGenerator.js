@@ -52,6 +52,18 @@ function PasswordGenerator () {
   setPassword(passwordGenerator(sliderValue));
   };
 
+  // 6. Copy button
+  const [copy, setCopy] = useState("Copy");
+  const handleCopy = () =>  {
+    navigator.clipboard.writeText(password);
+    setCopy("Copied!");
+  };
+
+  // 7. Refresh button
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
 
 
     return (
@@ -63,8 +75,8 @@ function PasswordGenerator () {
 
                 <div className={classes.header}>
                     <p className={classes.password}>{password}</p>
-                    <p>Copy</p>
-                    <p>Refresh</p>
+                    <button className={classes.btn} onClick={handleCopy}>{copy}</button>
+                    <button className={classes.btn} onClick={handleRefresh}>Refresh</button>
                 </div>
 
                 <div className={classes.slider_wrap}>
