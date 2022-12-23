@@ -64,8 +64,6 @@ function PasswordGenerator () {
     window.location.reload();
   };
 
-
-
     return (
         <div className={classes.container}>
 
@@ -87,8 +85,8 @@ function PasswordGenerator () {
                        <p className={classes.pass_option}>{item.option}</p>  
                        <div className={classes.toogle_wrap}>
                            <input className={classes.input_toogle} type="checkbox" onChange={() => showPassword(index)}/>
-                           <div className={`${classes.on} ${classes.on_off}`}>ON</div>
-                           <div className={`${classes.off} ${classes.on_off}`}>OFF</div>
+                           <div className={`${classes.on} ${classes.on_off} ${passOptions[index].check ? classes.white : classes.green}`}>ON</div>
+                           <div className={`${classes.off} ${classes.on_off} ${passOptions[index].check ? classes.green : classes.white}`}>OFF</div>
                        </div>
                    </div>  
                     )
