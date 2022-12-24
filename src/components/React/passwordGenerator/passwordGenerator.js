@@ -13,34 +13,35 @@ function PasswordGenerator () {
     const [password, setPassword] = useState("");
     const [passOptions, setPassOptions] = useState(defaultOptions);
 
-    // 2. Slider values onChange
+    // 2. Slider values onChange & strong weak password
     const[sliderValue, setSliderValue] = useState(6);
+    const [color, setColor] = useState("");
+    const [passType, setPassType] = useState("");
 
     const changeSliderValue = (event) => {
-       setSliderValue(event.target.value);
+       let passLength = event.target.value;
+       setSliderValue(passLength);
+       if(passLength <= 6){
+        setColor("#ffeb3b");
+        setPassType("Attention! This password is weak! Advice: choose more than 6 characters length!");
+       } else if (passLength <= 12){
+        setColor("orange");
+        setPassType("This password is medium!");
+       } else {
+        setColor("#61f161");
+        setPassType("This password is strong!");
+       }
     };
         
     // 3. password generator function
     const passwordGenerator = (length) => {
     let passwordResult = "";
     let characters = "";
-    // if(passOptions[0].check === true) { characters = characters + passOptions[0].optionDetail;}
-    // if(passOptions[1].check === true) { characters = characters + passOptions[1].optionDetail;}
-    // if(passOptions[2].check === true) { characters = characters + passOptions[2].optionDetail;}
-    // if(passOptions[3].check === true) { characters = characters + passOptions[3].optionDetail;}
-
-    // for (let i = 0; i < passOptions.length; i++) {
-    //     if (passOptions[i].check === true) {
-    //         characters += passOptions[i].optionDetail;
-    //     }
-    // }
-
     passOptions.forEach(function(option) {
         if (option.check === true) {
           characters = characters + option.optionDetail;
         }
-      });
-      
+      });    
     for (let i=0; i < length; i++){
         passwordResult = passwordResult + characters.charAt(Math.floor(Math.random()* characters.length));
     }
@@ -67,7 +68,7 @@ function PasswordGenerator () {
             setPassword(passwordGenerator(sliderValue));
         } else if(!showAlert) {
             showAlert = true;
-            alert("Please choose one or more options for you password");
+            alert("Please choose one or more options for you password!");
         }
       });    
   };
@@ -83,8 +84,8 @@ function PasswordGenerator () {
   const handleRefresh = () => {
     window.location.reload();
   };
-  // 9. mobile copy and refresh 
- // strong weak password
+  
+ // 9. mobile copy and refresh 
 
 
     return (
@@ -101,7 +102,7 @@ function PasswordGenerator () {
                 </div>
 
                 <div className={classes.slider_wrap}>
-                    <label className={classes.slider_label}>Length ({sliderValue})</label>
+                    <label className={classes.slider_label} style={{color:color}}>Length ({sliderValue})</label>
                     <input className={classes.slider} max="15" min="6" type="range" step="1" value={sliderValue} onChange={changeSliderValue}></input>   
                     { passOptions.map((item, index) => 
                        <div className={classes.pass_settings} key={item.id}> 
@@ -115,6 +116,7 @@ function PasswordGenerator () {
                     )
                     }
                     <button className={classes.pass_btn} type="submit" onClick={submitPassword}>GENERATE PASSWORD</button>
+                    <p className={classes.passStrength} style={{color: color}}>{passType}</p>
                 </div>
             </div>
         </div>
