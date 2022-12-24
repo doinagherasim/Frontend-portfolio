@@ -37,11 +37,13 @@ function PasswordGenerator () {
     const passwordGenerator = (length) => {
     let passwordResult = "";
     let characters = "";
+
     passOptions.forEach(function(option) {
         if (option.check === true) {
           characters = characters + option.optionDetail;
         }
       });    
+
     for (let i=0; i < length; i++){
         passwordResult = passwordResult + characters.charAt(Math.floor(Math.random()* characters.length));
     }
@@ -51,26 +53,33 @@ function PasswordGenerator () {
 // 4. 
    const showPassword = (index) => {
     const newPassword = [...passOptions];
+    
     if(passOptions[index].check === true) {
      newPassword[index].check = false;
     } else if (passOptions[index].check === false){
      newPassword[index].check = true;
     }
+
     setPassOptions(newPassword);
     };
 
   // 5. generate the password and alert
+  const [showAlert, setShowAlert]=useState(false);
+
   const submitPassword = (e) => { 
-    let showAlert = false;
-    passOptions.forEach(function(option) {
+    passOptions.forEach(function(option) {    
         if (option.check === true) {
             e.preventDefault();
             setPassword(passwordGenerator(sliderValue));
-        } else if(!showAlert) {
-            showAlert = true;
-            alert("Please choose one or more options for you password!");
-        }
+            setShowAlert(false);
+        } else if (passOptions.every(option => option.check === false)) {
+              setShowAlert(true);
+            } 
       });    
+  };
+
+  const alertOff = () => {
+    setShowAlert(false);
   };
 
   // 6. Copy button
@@ -83,13 +92,15 @@ function PasswordGenerator () {
   // 7. Refresh button
   const handleRefresh = () => {
     window.location.reload();
-  };
-  
- // 9. mobile copy and refresh 
-
+  }; 
 
     return (
         <div className={classes.container}>
+
+            {showAlert && <div className={classes.alert}>
+                <p className={classes.alerText}>Please choose one or more options for your password!</p>
+                <button onClick={alertOff} className={classes.btn_ok}>Ok</button>
+                </div>}
 
             <h2 className={classes.title}>Password generator</h2>
 
