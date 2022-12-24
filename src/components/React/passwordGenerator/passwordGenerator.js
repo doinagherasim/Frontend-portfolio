@@ -20,15 +20,27 @@ function PasswordGenerator () {
        setSliderValue(event.target.value);
     };
         
-    // 3. password generator check working on console
+    // 3. password generator function
     const passwordGenerator = (length) => {
     let passwordResult = "";
     let characters = "";
-    if(passOptions[0].check === true) { characters = characters + passOptions[0].optionDetail;}
-    if(passOptions[1].check === true) { characters = characters + passOptions[1].optionDetail;}
-    if(passOptions[2].check === true) { characters = characters + passOptions[2].optionDetail;}
-    if(passOptions[3].check === true) { characters = characters + passOptions[3].optionDetail;}
+    // if(passOptions[0].check === true) { characters = characters + passOptions[0].optionDetail;}
+    // if(passOptions[1].check === true) { characters = characters + passOptions[1].optionDetail;}
+    // if(passOptions[2].check === true) { characters = characters + passOptions[2].optionDetail;}
+    // if(passOptions[3].check === true) { characters = characters + passOptions[3].optionDetail;}
 
+    // for (let i = 0; i < passOptions.length; i++) {
+    //     if (passOptions[i].check === true) {
+    //         characters += passOptions[i].optionDetail;
+    //     }
+    // }
+
+    passOptions.forEach(function(option) {
+        if (option.check === true) {
+          characters = characters + option.optionDetail;
+        }
+      });
+      
     for (let i=0; i < length; i++){
         passwordResult = passwordResult + characters.charAt(Math.floor(Math.random()* characters.length));
     }
@@ -46,10 +58,18 @@ function PasswordGenerator () {
     setPassOptions(newPassword);
     };
 
-  // 5. generate the password
-  const submitPassword = (e) => {
-  e.preventDefault();
-  setPassword(passwordGenerator(sliderValue));
+  // 5. generate the password and alert
+  const submitPassword = (e) => { 
+    let showAlert = false;
+    passOptions.forEach(function(option) {
+        if (option.check === true) {
+            e.preventDefault();
+            setPassword(passwordGenerator(sliderValue));
+        } else if(!showAlert) {
+            showAlert = true;
+            alert("Please choose one or more options for you password");
+        }
+      });    
   };
 
   // 6. Copy button
@@ -63,6 +83,9 @@ function PasswordGenerator () {
   const handleRefresh = () => {
     window.location.reload();
   };
+  // 9. mobile copy and refresh 
+ // strong weak password
+
 
     return (
         <div className={classes.container}>
@@ -93,7 +116,6 @@ function PasswordGenerator () {
                     }
                     <button className={classes.pass_btn} type="submit" onClick={submitPassword}>GENERATE PASSWORD</button>
                 </div>
-
             </div>
         </div>
     );
