@@ -1,6 +1,8 @@
 import classes from "./passwordGenerator.module.css";
 import {React, useState} from "react";
 
+// review- copy and refresh not working on the phone
+
 function PasswordGenerator () {
     // 1. list of password options 
     const defaultOptions = [
@@ -13,13 +15,14 @@ function PasswordGenerator () {
     const [password, setPassword] = useState("");
     const [passOptions, setPassOptions] = useState(defaultOptions);
 
-    // 2. Slider values onChange & strong weak password
+    // 2. Slider values onChange & strong-weak password
     const[sliderValue, setSliderValue] = useState(6);
     const [color, setColor] = useState("");
     const [passType, setPassType] = useState("");
 
     const changeSliderValue = (event) => {
        let passLength = event.target.value;
+       // 3. strong-weak password
        setSliderValue(passLength);
        if(passLength <= 6){
         setColor("#ffeb3b");
@@ -33,7 +36,7 @@ function PasswordGenerator () {
        }
     };
         
-    // 3. password generator function
+    // 4. password generator function
     const passwordGenerator = (length) => {
     let passwordResult = "";
     let characters = "";
@@ -50,7 +53,7 @@ function PasswordGenerator () {
     return passwordResult;
     };
 
-// 4. 
+// 5. option on-off for the toogle
    const showPassword = (index) => {
     const newPassword = [...passOptions];
     
@@ -63,7 +66,7 @@ function PasswordGenerator () {
     setPassOptions(newPassword);
     };
 
-  // 5. generate the password and alert
+  // 6. generate the password and set alert
   const [showAlert, setShowAlert]=useState(false);
 
   const submitPassword = (e) => { 
@@ -82,14 +85,14 @@ function PasswordGenerator () {
     setShowAlert(false);
   };
 
-  // 6. Copy button
+  // 7. Copy button
   const [copy, setCopy] = useState("Copy");
   const handleCopy = () =>  {
     navigator.clipboard.writeText(password);
     setCopy("Copied!");
   };
 
-  // 7. Refresh button
+  // 8. Refresh button
   const handleRefresh = () => {
     window.location.reload();
   }; 
@@ -98,7 +101,7 @@ function PasswordGenerator () {
         <div className={classes.container}>
 
             {showAlert && <div className={classes.alert}>
-                <p className={classes.alerText}>Please choose one or more options for your password!</p>
+                <p className={classes.alertText}>Please choose one or more options for your password!</p>
                 <button onClick={alertOff} className={classes.btn_ok}>Ok</button>
                 </div>}
 
