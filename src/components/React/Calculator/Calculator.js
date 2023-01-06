@@ -8,38 +8,43 @@ function Calculator() {
     const digits =[ 7, 8, 9, 4, 5, 6, 1, 2, 3, 0, ".","="];
     const operators = ["/","x","-","+"];
     const [value, setValue] = useState([]);
+    const [storedValue, setStoredValue] = useState([]);
     const [firstNumber, setFirstNumber] = useState([]);
     const [secondNumber, setSecondNumber] = useState([]);
+    const [result, setResult] = useState(0);
     const [operator, setOperator] = useState(null);
-    // const [result, setResult] = useState(0);
-
-    // 2. clickHndler
+    
+    // 2. clickHndler for each digit
     const clickHandler = (digit) => {
-     setValue([...value, digit]);
-     if(digit === "C") {
-        setValue([]);
-        return;
-     }
-     if (digit === "DEL") {
-        setValue(value.slice(0,-1));
-     }
-    //  if (digit === "%") {
-    //     const percent = firstNumber / 100;
-    //     setValue(percent);
-    //     console.log("value", value);
-    //  }
-     if(digit === "/" || digit === "x" || digit === "+" || digit === "-" ) {
+        // const firstNr = Number(value.join(""));
+        setValue([...value, digit]);
+
+     if(digit === "/" || digit === "x" || digit === "+" || digit === "-") {
         // set first part of the array
-        setFirstNumber(parseInt(value.join("")),10);
+        const firstNr = Number(value.join(""));
+        setFirstNumber(firstNr);
         // set the oprator that was clicked
         setOperator(digit);
+        setStoredValue(firstNr);
+     } 
+
+     if(digit === "%") {
+        const firstNr = Number(value.join(""));
+        let result;
+        result =firstNr/100;
+        setValue([result]);  
+        setStoredValue(firstNr+operator + "%");   
+        setResult([result]);
+     }
+     if(digit === "+/-"){
+        console.log("-");
      }
 
      if(digit === "=") {
         // find the index of the used oprator => [2,3,4,"/",4,5]
         const index = value.indexOf(operator);
        // define the second part of the array, after the operator
-        const secondNr= parseInt(value.slice(index+1).join(""),10);
+        const secondNr= Number(value.slice(index+1).join(""));
         setSecondNumber(secondNr);
        // calculate the result
         let result;
@@ -55,28 +60,46 @@ function Calculator() {
                 break;
             case "x":
                 result = firstNumber * secondNr;
+                break;    
+            case "%":
+                result = firstNumber / 100;
                 break;              
             default:
                 result = NaN;
         }
-
-        console.log("result", result);
-        setValue([result]);
-        
+        setValue([result]);  
+        setStoredValue(storedValue+operator+secondNr + "=");   
+        setResult([result]);
      }
     };
+
+    // 2. clickHandler for DEL, C, %
+    const clickHandlerOperator = (digit) => {
+        if (digit === "DEL" && value.length === 1) {
+            setValue(value.slice(0,-1));
+            setStoredValue([]);
+         }  else if (digit === "DEL" && value.length > 1) {
+                setValue(value.slice(0,-1));
+         };
+
+         if(digit === "C") {
+            setValue([]);
+            setStoredValue([]);
+         };
+    };
+    
 
    return (
         <div className="container">
             <div className="calculator_container">
                 <div className="screen_container">
-                    <p className="displayDigit">Ans is {firstNumber}</p>
+                    <p className="displayDigit">{storedValue}</p>
                     <p className="screen">{value}</p></div>
 
                 <div className="buttonBox buttonBoxGrey">{
                     otherOperators.map((element, index)=>
-                    <button className="button" style={{backgroundColor:"#8080809e"}} key={index} 
-                    onClick={()=>{clickHandler(element);}}>
+                    <button className="button btnGrey" key={index} 
+                    onClick={()=>{clickHandlerOperator(element);}}>
                         <p className="text">{element}</p></button>
                     )}
                 </div>
@@ -89,7 +112,7 @@ function Calculator() {
                 </div>
                 <div className="buttonBox buttonBoxOperators">{
                     operators.map((element, index)=>
-                    <button className="button" style={{backgroundColor:"#9198e5"}} key={index} 
+                    <button className="button btnBlue" key={index} 
                     onClick={()=>{clickHandler(element);}}>
                         <p className="text">{element}</p></button>
                     )}
