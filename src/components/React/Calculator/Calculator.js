@@ -17,6 +17,7 @@ function Calculator() {
     const [operator, setOperator] = useState(null);
     const [dotCounter, setDotCounter] = useState(0);
     const [firstNumber, setFirstnumber] = useState(0);
+    const [prevAnswer, setPrevAnswer] = useState(0);
   
     
     // 2. clickHndler for each digit
@@ -36,34 +37,56 @@ function Calculator() {
         && value.length === 0) 
        {
         console.log("3");
+        console.log("va-3", value);
         setValue([]); // do not allow user to enter operators if there is no digits
        } else if (digit === 0 && value.length === 1) {
         console.log("4");
         return;
        } 
-       else {
-        console.log("6");
+       else if(digit !== "DEL" && digit !== "C" && digit !== "+/-"){
+        console.log("5");
         setValue([...value, digit]);
         setFirstnumber(Number(value.join("")));
         setPrevOperator(digit);
-        console.log("firstNr1", firstNumber);
+        console.log("value5", value);
+        return;
        }
 
     // DELETE button   
-    if (digit === "DEL" && value.length === 1) {
+    if (digit === "DEL"){
+      if(value.length === 1) {
+      console.log("6-DEL");
         setValue(value.slice(0,-1));
         setStoredValue([]);
      }  
-     else if (digit === "DEL" && value.length > 1) {
+     else if (value.length > 1) {
+      console.log("7-DEL");
         setValue(value.slice(0,-1));
-     }  
+     } 
+    } 
      // CLEAR button
-     else if(digit === "C") {
+     else if(digit === "C" && value.length > 0) {
+      console.log("8-C");
         setValue([]);
         setStoredValue([]);
      }  
+    // PLUS/MINUS operator
+     if(digit === "+/-") {
+      console.log("9-+/-");
+      if(value.length > 0 && value[0] !== "-"){
+        console.log("10-+/-");
+        setValue(["-", ...value]);
+        setPrevAnswer(value);
+      }
+      else if(value[0] === "-") {
+        console.log("11-+/-");
+        setValue([...prevAnswer]);
+        console.log("value", value);
+      }
+    }
      // PERCENT button - %
-     else if(digit === "%" && value.length > 0) {
+      if(digit === "%" && value.length > 0 && value === Number) {
+        console.log("12-%");
         const firstNr = Number(value.join(""));
         let result;
         result =firstNr/100;
@@ -71,22 +94,18 @@ function Calculator() {
         setStoredValue(firstNr+operator + "%");   
         setResult([result]);
      } 
-     else if (operatorsTop.includes(digit) || operatorsRight.includes(digit)) {
-        setOperator(digit);
-     } 
+    //  else if (operatorsTop.includes(digit) || operatorsRight.includes(digit)) {
+    //   console.log("10-%");
+    //   setOperator(digit);
+    //  } 
      // EQUAL button - "=" and Calculation
-    else if (digit === "=" && value.length >1) { 
-      console.log("valueEqual", value);  
-      console.log("first", firstNumber);
-     
+     if (digit === "=" && value.length >1) { 
+      console.log("13-=");
     // find the index of the used operator
             const index = value.indexOf(operator);
             const firstNr = Number(value.slice(0,index).join(""));
             const secondNr = Number(value.slice(index+1).join(""));
             // calculate the result
-            console.log("fr", firstNr);
-            console.log("sec", secondNr);
-
             let result;
             switch (operator) {
               case "+": 
@@ -106,46 +125,41 @@ function Calculator() {
                 break;     
               default:
                 result = NaN;
-                console.log("result", result);
             }
             setValue([result]);  
             setStoredValue(firstNr+operator+secondNr + "=");   
             setResult([result]);
           } 
           else if (digit === "=" && value.length === 0) {
+            console.log("14-=");
             setValue([]);  // Do not allow the user to press "=" if there are no values in the array
           } 
           else if (digit === "=" && value.length === 1) {
+            console.log("15-=");
             setValue(value);
             setStoredValue(value);
+            return;
           }
           
           // DOT "."
           // Increment the dot counter if the user clicks on the "." button
           if (digit === "." && dotCounter === 0) {
+            console.log("16-.");
             let counter = dotCounter;
               counter++;
               setDotCounter(counter);
             
            } 
           // Do not allow the user to enter a "." if the dot counter is greater than 0
-          else if (digit === "." && dotCounter > 0) {
+           if (digit === "." && dotCounter > 0) {
+            console.log("17-.");
           setValue([...value]);
         }  else if (operators.includes(digit)) {
-          console.log("5");
+          console.log("18-.");
           setDotCounter(0);
           setValue([...value, digit]);
-         }
-
-      if(digit === "+/-" && value !== 0) {
-        if(value[0] === "-") {
-          console.log("1");
-          setValue([...value]);
-        } else {
-          console.log("2");
-          setValue(["-", ...value]);
         }
-      }
+    
      };
 
    return (
