@@ -23,10 +23,12 @@ function Calculator() {
     // 2. clickHndler for each digit
     const clickHandler = (digit) => {
 
-    const operators = ["+", "-", "x", "/"];  // Array of operators
+    const operators = ["+", "-", "x", "/","%"];  // Array of operators
 
     if (operators.includes(prevOperator) && operators.includes(digit)) {
       console.log("1");
+      console.log("prev1", prevAnswer);
+      setValue([...prevAnswer,digit]);
         return;  // Do not allow the user to enter two or more operators one after another
       } 
         else if (digit === "." && prevOperator === digit){
@@ -41,13 +43,14 @@ function Calculator() {
         setValue([]); // do not allow user to enter operators if there is no digits
        } else if (digit === 0 && value.length === 1) {
         console.log("4");
-        return;
+        return; // do not allow to write 00000 at the bigining
        } 
        else if(digit !== "DEL" && digit !== "C" && digit !== "+/-"){
         console.log("5");
         setValue([...value, digit]);
         setFirstnumber(Number(value.join("")));
         setPrevOperator(digit);
+        setPrevAnswer(value);
         console.log("value5", value);
         return;
        }
@@ -57,20 +60,20 @@ function Calculator() {
       if(value.length === 1) {
       console.log("6-DEL");
         setValue(value.slice(0,-1));
-        setStoredValue([]);
+        setStoredValue([]); // return empty if there is only one digit
      }  
      else if (value.length > 1) {
       console.log("7-DEL");
-        setValue(value.slice(0,-1));
+        setValue(value.slice(0,-1)); // delete the digits one by one
      } 
     } 
      // CLEAR button
      else if(digit === "C" && value.length > 0) {
       console.log("8-C");
         setValue([]);
-        setStoredValue([]);
+        setStoredValue([]); // clear the value && answear
      }  
-    // PLUS/MINUS operator
+    // PLUS/MINUS operator 
      if(digit === "+/-") {
       console.log("9-+/-");
       if(value.length > 0 && value[0] !== "-"){
@@ -85,18 +88,15 @@ function Calculator() {
       }
     }
      // PERCENT button - %
-      if(digit === "%" && value.length > 0 && value === Number) {
-        console.log("12-%");
-        const firstNr = Number(value.join(""));
-        let result;
-        result =firstNr/100;
-        setValue([result]);  
-        setStoredValue(firstNr+operator + "%");   
-        setResult([result]);
-     } 
-    //  else if (operatorsTop.includes(digit) || operatorsRight.includes(digit)) {
-    //   console.log("10-%");
-    //   setOperator(digit);
+    //   if(digit === "%" && value.length > 0) {
+    //     console.log("12-%");
+    //     console.log("val-%", value);
+    //     const firstNr = Number(value.join(""));
+    //     let result;
+    //     result =firstNr/100;
+    //     setValue([result]);  
+    //     setStoredValue(firstNr+operator + "%");   
+    //     setResult([result]);
     //  } 
      // EQUAL button - "=" and Calculation
      if (digit === "=" && value.length >1) { 
