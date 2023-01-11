@@ -16,90 +16,102 @@ function Calculator() {
     const operatorsBottom = [0, ".","="];
     const [storedValue, setStoredValue] = useState([]);
     const [result, setResult] = useState(0);
-    const [operator, setOperator] = useState(null);
     const [dotCounter, setDotCounter] = useState(0);
-    const [firstNumber, setFirstnumber] = useState(0);
-    const [prevAnswer, setPrevAnswer] = useState([]);
+    const [prevValue, setPrevValue] = useState([]);
+    // const [index, setIndex] = useState(null);
   
     
     // 2. clickHndler for each digit
     const clickHandler = (digit) => {
 
-    const operators = ["+", "-", "x", "/","%"];  // Array of operators
+    const operators = ["+", "-", "*", "/","%"];  // Array of operators
 
     if (operators.includes(prevOperator) && operators.includes(digit)) {
-      console.log("1");
-      console.log("prev1", prevAnswer);
-      setValue([...prevAnswer,digit]);
+      setValue([...prevValue,digit]);
         return;  // Do not allow the user to enter two or more operators one after another
       } 
-      //   else if (digit === "." && prevOperator === digit){
-      //     console.log("2");
-      //   return; // Do not allow the user to enter more than one "." digit 
-      // } 
         else if ((operatorsTop.includes(digit) ||  operatorsRight.includes(digit))
         && value.length === 0) 
        {
-        console.log("3");
         console.log("va-3", value);
         setValue([]); // do not allow user to enter operators if there is no digits
-       } else if (digit === 0 && value.length === 1) {
-        console.log("4");
+       } 
+       else if (digit === 0 && value.length === 1) {
         return; // do not allow to write 00000 at the bigining
        } 
-       else if(digit !== "DEL" && digit !== "C" && digit !== "+/-" && digit !== "=" && digit !== "." && !operators.includes(digit)){
+       else if(digits.includes(digit)){
         console.log("5");
-        setValue([...value, digit]);
-        // setFirstnumber(Number(value.join("")));
+        console.log("val5", value);
+        console.log("prevOp5", prevOperator);
+        console.log("prevVal5", prevValue);
+        console.log("stored5", storedValue);
+        setValue([...value, digit]); // return the digit value if it is a number
         setPrevOperator(digit);
-        console.log("value5", value);
-        console.log("prev5", prevAnswer);
-        
        } 
        else if(operators.includes(digit)){
         console.log("6");
         setValue([...value, digit]);
-        setFirstnumber(Number(value.join("")));
         setPrevOperator(digit);
-        setPrevAnswer([...value]);
+        setPrevValue([...value]);
         setStoredValue([...value]);
-        setOperator(digit);
-        console.log("value6", value);
-        console.log("prev6", prevAnswer);
+        console.log("val6", value);
+        console.log("prevOp6", prevOperator);
+        console.log("prevVal6", prevValue);
+        console.log("stored6", storedValue);
         return;
        }
 
     // DELETE button   
     if (digit === "DEL"){
-      if(value.length === 1) {
-      console.log("6-DEL");
-        setValue(value.slice(0,-1));
-        setStoredValue([]); // return empty if there is only one digit
-     }  
-     else if (value.length > 1) {
-      console.log("7-DEL");
-        setValue(value.slice(0,-1)); // delete the digits one by one
-     } 
+      setValue(value.slice(0,-1));
     } 
+
      // CLEAR button
-     else if(digit === "C" && value.length > 0) {
-      console.log("8-C");
+     if(digit === "C" && value.length > 0) {
         setValue([]);
         setStoredValue([]); // clear the value && answear
      }  
+
     // PLUS/MINUS operator 
      if(digit === "+/-") {
-      console.log("9-+/-");
-      if(value.length > 0 && value[0] !== "-"){
-        console.log("10-+/-");
-        setValue(["-", ...value]);
-        setPrevAnswer(value);
+      console.log("9");
+      const prevValue = value.slice(1); // remeber the previos value without "-"
+      console.log("value9", value);
+
+      for(let i = value.length-1; i >=0; i--){
+        if(value[i] === "+" || value[i] === "*" || value[i] === "/"){
+          console.log("value10", value);
+        console.log("10 +/- include");
+        let index = i;
+        let index1 = i+1;
+        value.splice(index1,0,"-");
+        console.log("prev10", prevValue);
+        console.log("val10", value);
+        setValue(value);
+        break;
+      } else if (value[i] === "-") {
+        console.log("include -");
+        setValue([...prevValue]);
       }
-      else if(value[0] === "-") {
-        console.log("11-+/-");
-        setValue([...prevAnswer]);
-        console.log("value", value);
+      else if (!operators.includes(value[i])) {
+          if( value.length > 0 && value[0] !== "-"){
+            console.log("not include");
+            setValue(["-", ...value]);
+            setPrevValue(value);
       }
+      }
+    }
+     
+    //   
+    //   else if(value[0] === "-" && !operators.includes(digit)) {
+    //     console.log("11-+/-");
+    //     setValue([...prevValue]);
+    //     console.log("value", value);
+    //     console.log("prev-11", prevValue);
+    //   } else if (operators.includes(value[0])){
+    //     console.log("1");
+    //     setValue(["-", ...value]);
+    //   }
     }
      // DOT operator "."
           // Increment the dot counter if the user clicks on the "." button
@@ -113,15 +125,10 @@ function Calculator() {
           if(dotCounter === 0){
             console.log("13-.");
             setValue([...value, digit]);
-            console.log("val13", value);
-            console.log("prev13", prevAnswer);
           }
-          else if (dotCounter > 0 && prevAnswer.includes(".")) {
+          else if (dotCounter > 0 && prevValue.includes(".")) {
             console.log("14-.");
-            console.log("prev14", prevAnswer);
-            console.log("include ., new caracter");
           setValue([...value,digit]);
-          console.log("val14", value);
         }  
       } 
      // PERCENT button - %
@@ -158,6 +165,16 @@ function Calculator() {
          
     
      };
+
+     const arr = ["-",3,4,7,9];
+
+     for (let i = arr.length - 1; i >= 0; i--) {
+         if (arr[i] === "+" || arr[i] === "-" || arr[i] === "/"  || arr[i] === "*") {
+             console.log(i);
+             break;
+         }
+     }
+     
 
    return (
         <div className="container">
