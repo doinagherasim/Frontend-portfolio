@@ -31,8 +31,7 @@ function Calculator() {
         return;  // Do not allow the user to enter two or more operators one after another
       } 
         else if ((operatorsTop.includes(digit) ||  operatorsRight.includes(digit))
-        && value.length === 0) 
-       {
+        && value.length === 0){
         console.log("va-3", value);
         setValue([]); // do not allow user to enter operators if there is no digits
        } 
@@ -40,6 +39,7 @@ function Calculator() {
         return; // do not allow to write 00000 at the bigining
        } 
        else if(digits.includes(digit)){
+        console.log("5", value);
         setValue([...value, digit]); // return the digit value if it is a number
         setPrevOperator(digit);
        } 
@@ -49,6 +49,7 @@ function Calculator() {
         setPrevOperator(digit);
         setPrevValue([...value]);
         setStoredValue([...value]);
+        console.log("val6", value);
         return;
        }
 
@@ -64,72 +65,38 @@ function Calculator() {
      }  
 
     // PLUS/MINUS operator 
-     if(digit === "+/-") {
+    if (digit === "+/-") {
       const operatorsArray = ["+","*", "/","%"];
-      console.log("9");
-      for(let i = value.length-1; i >=0; i--) {
-        // condition when no operator in the array
-        if (!operatorsArray.includes(value[i]) && value[0] !== "-") {
-          console.log("10-not include");
-          setValue(["-", ...value]);
-          setPrevValue(value);
+      const hasOperator = value.some(el => operatorsArray.includes(el));
+      const lastOperatorIndex = value.slice().reverse().findIndex(el => operatorsArray.includes(el));
+      const operatorIndex = value.length - lastOperatorIndex-1; // index of the operator
+      const nextIndex = operatorIndex + 1; // next index after operator
+      if(hasOperator) {
+        if( (value[nextIndex] !== "-")) {
+        console.log("7");
+        value.splice(nextIndex,0,"-");
+        setValue([...value]);
+        setStoredValue(value);
+        console.log("stored7", storedValue);
         }
-        else if(!operatorsArray.includes(value[i])) {
-              console.log("11-+/-");
-              console.log("value11", value);
-              setValue([...prevValue]);
-              console.log("ok", !operatorsArray.includes(value[i]) && value[0] === "-");
-              console.log("ok2", operatorsArray.includes(value[i]));
-              console.log("vali", value[i]);
+       else if(value[nextIndex] === "-"){
+        console.log("8- avem deja");
+        value.splice(nextIndex,1);
+        setValue(value);
+        setStoredValue(value);
+      }
+      } else {
+        if(value[0] !== "-") {
+        console.log("10 not include", value);
+        setPrevValue(value);
+        setValue(["-", ...value]);
+        } else {
+          setValue(prevValue);
         }
-      
-
-        if(operatorsArray.includes(value[i])){
-        setValue([value]);
-        console.log("12");
-        console.log("value12 before", value);
-        let index = i;
-        let index1=index+1;
-        value.splice(index1,0,"-");
-        console.log("index", index);
-        console.log("index1", index1);
-        console.log("value12 after", value);
-        
-        }
-
-    //   } else if(value[0] === "-" && operators.includes(digit)){
-    //     console.log("11 +/- include");
-    //     let index = i;
-    //     let index1=index+1;
-    //     value.splice(index1,0,"-");
-    //     console.log("prev11", prevValue);
-    //     console.log("val11", value);
-    //     console.log("stored11", storedValue);
-        
-    //     setValue([value]); // value state when operator in the array
-    //   } 
-    //   // else if (value[i] === "-") {
-    //   //   console.log("12");
-    //   //   console.log("include -");
-    //   //   setValue([...prevValue]);
-    //   // }
-    //   else if (!operators.includes(value[i])) {
-    //       if( value.length > 0 && value[0] !== "-"){
-    //         console.log("13-not include");
-    //         setValue(["-", ...value]);
-    //         setPrevValue(value);
-    //   }
-    // }  
-    //   else if(value[0] === "-" && !operators.includes(digit)) {
-    //     console.log("14-+/-");
-    //     setValue([...prevValue]);
-    //     console.log("operators", operators);
-    //   } else if (operators.includes(value[0])){
-    //     console.log("15");
-    //     setValue(["-", ...value]);
-    //   }
+      }
     }
-
+    
+    
      // DOT operator "."
           // Increment the dot counter if the user clicks on the "." button
     if (digit === ".") {
@@ -182,8 +149,8 @@ function Calculator() {
             return;
           }
         };
-      }
-    };
+      };
+   
       
         
      
