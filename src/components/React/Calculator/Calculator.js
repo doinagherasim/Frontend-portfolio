@@ -40,11 +40,6 @@ function Calculator() {
         return; // do not allow to write 00000 at the bigining
        } 
        else if(digits.includes(digit)){
-        console.log("5");
-        console.log("val5", value);
-        console.log("prevOp5", prevOperator);
-        console.log("prevVal5", prevValue);
-        console.log("stored5", storedValue);
         setValue([...value, digit]); // return the digit value if it is a number
         setPrevOperator(digit);
        } 
@@ -54,10 +49,6 @@ function Calculator() {
         setPrevOperator(digit);
         setPrevValue([...value]);
         setStoredValue([...value]);
-        console.log("val6", value);
-        console.log("prevOp6", prevOperator);
-        console.log("prevVal6", prevValue);
-        console.log("stored6", storedValue);
         return;
        }
 
@@ -74,45 +65,71 @@ function Calculator() {
 
     // PLUS/MINUS operator 
      if(digit === "+/-") {
+      const operatorsArray = ["+","*", "/","%"];
       console.log("9");
-      const prevValue = value.slice(1); // remeber the previos value without "-"
-      console.log("value9", value);
+      for(let i = value.length-1; i >=0; i--) {
+        // condition when no operator in the array
+        if (!operatorsArray.includes(value[i]) && value[0] !== "-") {
+          console.log("10-not include");
+          setValue(["-", ...value]);
+          setPrevValue(value);
+        }
+        else if(!operatorsArray.includes(value[i])) {
+              console.log("11-+/-");
+              console.log("value11", value);
+              setValue([...prevValue]);
+              console.log("ok", !operatorsArray.includes(value[i]) && value[0] === "-");
+              console.log("ok2", operatorsArray.includes(value[i]));
+              console.log("vali", value[i]);
+        }
+      
 
-      for(let i = value.length-1; i >=0; i--){
-        if(value[i] === "+" || value[i] === "*" || value[i] === "/"){
-          console.log("value10", value);
-        console.log("10 +/- include");
+        if(operatorsArray.includes(value[i])){
+        setValue([value]);
+        console.log("12");
+        console.log("value12 before", value);
         let index = i;
-        let index1 = i+1;
+        let index1=index+1;
         value.splice(index1,0,"-");
-        console.log("prev10", prevValue);
-        console.log("val10", value);
-        setValue(value);
-        break;
-      } else if (value[i] === "-") {
-        console.log("include -");
-        setValue([...prevValue]);
-      }
-      else if (!operators.includes(value[i])) {
-          if( value.length > 0 && value[0] !== "-"){
-            console.log("not include");
-            setValue(["-", ...value]);
-            setPrevValue(value);
-      }
-      }
-    }
-     
-    //   
+        console.log("index", index);
+        console.log("index1", index1);
+        console.log("value12 after", value);
+        
+        }
+
+    //   } else if(value[0] === "-" && operators.includes(digit)){
+    //     console.log("11 +/- include");
+    //     let index = i;
+    //     let index1=index+1;
+    //     value.splice(index1,0,"-");
+    //     console.log("prev11", prevValue);
+    //     console.log("val11", value);
+    //     console.log("stored11", storedValue);
+        
+    //     setValue([value]); // value state when operator in the array
+    //   } 
+    //   // else if (value[i] === "-") {
+    //   //   console.log("12");
+    //   //   console.log("include -");
+    //   //   setValue([...prevValue]);
+    //   // }
+    //   else if (!operators.includes(value[i])) {
+    //       if( value.length > 0 && value[0] !== "-"){
+    //         console.log("13-not include");
+    //         setValue(["-", ...value]);
+    //         setPrevValue(value);
+    //   }
+    // }  
     //   else if(value[0] === "-" && !operators.includes(digit)) {
-    //     console.log("11-+/-");
+    //     console.log("14-+/-");
     //     setValue([...prevValue]);
-    //     console.log("value", value);
-    //     console.log("prev-11", prevValue);
+    //     console.log("operators", operators);
     //   } else if (operators.includes(value[0])){
-    //     console.log("1");
+    //     console.log("15");
     //     setValue(["-", ...value]);
     //   }
     }
+
      // DOT operator "."
           // Increment the dot counter if the user clicks on the "." button
     if (digit === ".") {
@@ -142,6 +159,8 @@ function Calculator() {
     //     setStoredValue(firstNr+operator + "%");   
     //     setResult([result]);
     //  } 
+
+
      // EQUAL button - "=" and Calculation
     if (digit === "=" && value.length >1) { 
       console.log("16-=");
@@ -151,8 +170,8 @@ function Calculator() {
             setValue([result]);  
             setStoredValue(operation);   
             setResult([result]);
-          } 
-          else if (digit === "=" && value.length === 0) {
+          
+          if (digit === "=" && value.length === 0) {
             console.log("17-=");
             setValue([]);  // Do not allow the user to press "=" if there are no values in the array
           } 
@@ -162,18 +181,11 @@ function Calculator() {
             setStoredValue(value);
             return;
           }
-         
-    
-     };
-
-     const arr = ["-",3,4,7,9];
-
-     for (let i = arr.length - 1; i >= 0; i--) {
-         if (arr[i] === "+" || arr[i] === "-" || arr[i] === "/"  || arr[i] === "*") {
-             console.log(i);
-             break;
-         }
-     }
+        };
+      }
+    };
+      
+        
      
 
    return (
