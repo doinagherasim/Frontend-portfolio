@@ -33,27 +33,26 @@ function Calculator() {
       } 
         else if ((operatorsTop.includes(digit) ||  operatorsRight.includes(digit))
         && value.length === 0){
-        console.log("3");
         setValue([]); // do not allow user to enter operators if there is no digits
        } 
        else if (digit === 0 && value.length === 1) {
         return; // do not allow to write 00000 at the bigining
        } 
        else if(digits.includes(digit)){
-        console.log("5");
         setValue([...value, digit]); // return the digit value if it is a number
         setPrevOperator(digit);
        } 
        else if(operators.includes(digit)){
-        console.log("6");
         if(digit === "-"){
         setMinus(true);
+        }
+        if(digit === "+" || digit === "/" || digit === "*") {
+          setMinus(false);
         }
         setValue([...value, digit]);
         setPrevOperator(digit);
         setPrevValue([...value]);
         setStoredValue([...value]);
-        console.log("minus6", minus);
         return;
        }
 
@@ -75,70 +74,29 @@ function Calculator() {
       const lastOperatorIndex = value.slice().reverse().findIndex(el => operatorsArray.includes(el));
       const operatorIndex = value.length - lastOperatorIndex-1; // index of the operator
       const nextIndex = operatorIndex + 1; // next index after operator
-      const minusOperator= value.slice().reverse().findIndex(el => el === "-");
-      const minusOperatorIndex = value.length - minusOperator-1; // index of the minus operator
-      const nextMinusOperatorindex = minusOperatorIndex +1;
       if(hasOperator) {
         if( (value[nextIndex] !== "-")) {
-        console.log("7");
         value.splice(nextIndex,0,"-");
         setValue([...value]);
         setStoredValue(value);
-        console.log("minus7", minus);
         }
        else if(value[nextIndex] === "-" && minus === false){
-        console.log("8");
         value.splice(nextIndex,1);
         setValue(value);
         setStoredValue(value);
-        console.log("minus8", minus);
-      } 
-      else if(value[nextIndex] === "-" && minus === true && 
-      value[minusOperatorIndex] === "-" && value[nextMinusOperatorindex] === "-"){
-        console.log("9");
-        setPrevValue(value);
-        value.splice(minusOperatorIndex,0,"-");
-        setValue([...value]);
-        setStoredValue(value);
-        console.log("minus9", minus);
-        console.log("value9", value);
-        console.log("minusoperindex9",value[minusOperatorIndex]);
-        console.log("minusoperindex9",minusOperatorIndex);
-        console.log("minus-next", value[nextMinusOperatorindex]);
-        console.log("minus-next", nextMinusOperatorindex);
-        console.log("value[nextIndex]", value[nextIndex]);
-        console.log("value[nextIndex]", nextIndex);
-
-      } else if(value[nextIndex] === "-" && minus === true && 
-        value[minusOperatorIndex] === "-" && value[nextMinusOperatorindex] !== "-"){
-        console.log("10");
-        value.splice(minusOperatorIndex,0,"-");
-        setValue([...value]);
-        setStoredValue(value);
-        
-        console.log("minus10", minus);
-        console.log("value10", value);
-        console.log("minusoperindex10",value[minusOperatorIndex]);
-        console.log("minusoperindex10",minusOperatorIndex);
-        console.log("minus-next10", value[nextMinusOperatorindex]);
-        console.log("minus-next10", nextMinusOperatorindex);
-        console.log("value[nextIndex10]", value[nextIndex]);
-        console.log("value[nextIndex10]", nextIndex);
-
-      } 
+      } else if(value[nextIndex] === "-" && minus === true) {
+        return;
+      }
       } 
       else if(!hasOperator) {
             if(value[0] !== "-") {
-              console.log("11");
               setPrevValue(value);
               setValue(["-", ...value]);
               } else if (value[0] === "-"){
-                console.log("12");
                 setValue(prevValue);
               }          
       }
     }
-    
     
      // DOT operator "."
           // Increment the dot counter if the user clicks on the "." button
