@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import classes from "./project2.module.css"; 
+import classes from "./responsivelayout.module.css"; 
 import GTD from "../../../assets/GTD.png";
 
-function Project2() {
+function ResponsiveLayout() {
     let navigateHome = useNavigate();
     const home = () => {
         navigateHome("/");
@@ -86,4 +86,4 @@ function Project2() {
     );
 };
 
-export default Project2;
+export default  ResponsiveLayout;

@@ -1,7 +1,7 @@
 import {React} from "react";
 import BookStore from "./BookStore";
 
-function Project3() {
+function PropsProject() {
   const bookList = [
 { title: "Supranatural",
   author: "Joe Dispenza",
@@ -34,5 +34,5 @@ return (
 );
 }
 
-export default Project3;
+export default PropsProject;
 
