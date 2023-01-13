@@ -28,26 +28,28 @@ function Calculator() {
     const operators = ["+", "-", "*", "/","%"];  // Array of operators
 
     if (operators.includes(prevOperator) && operators.includes(digit)) {
+      console.log("1");
       setValue([...prevValue,digit]);
         return;  // Do not allow the user to enter two or more operators one after another
       } 
-        else if ((operatorsTop.includes(digit) ||  operatorsRight.includes(digit))
+        else if ((operatorsTop.includes(digit) ||  operatorsRight.includes(digit) || digit === 0)
         && value.length === 0){
+          console.log("2");
         setValue([]); // do not allow user to enter operators if there is no digits
        } 
-       else if (digit === 0 && value.length === 1) {
-        return; // do not allow to write 00000 at the bigining
-       } 
-       else if(digits.includes(digit)){
+       else if(digits.includes(digit) || digit === 0){
+        console.log("4");
         setValue([...value, digit]); // return the digit value if it is a number
         setPrevOperator(digit);
        } 
        else if(operators.includes(digit)){
+        console.log("5");
         if(digit === "-"){
         setMinus(true);
         setDotCounter(0);
         }
         if(digit === "+" || digit === "/" || digit === "*") {
+          console.log("6");
           setMinus(false);
           setDotCounter(0);
         }
@@ -109,7 +111,11 @@ function Calculator() {
       counter++;
       setDotCounter(counter); // start to count the dots
       if(dotCounter === 0) {
+        if(value.length === 0) {
+          setValue([0,...value, digit]);
+        } else {
           setValue([...value, digit]);
+        }
         } else {
           return;
       }
