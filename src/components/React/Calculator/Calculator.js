@@ -45,9 +45,11 @@ function Calculator() {
        else if(operators.includes(digit)){
         if(digit === "-"){
         setMinus(true);
+        setDotCounter(0);
         }
         if(digit === "+" || digit === "/" || digit === "*") {
           setMinus(false);
+          setDotCounter(0);
         }
         setValue([...value, digit]);
         setPrevOperator(digit);
@@ -59,12 +61,14 @@ function Calculator() {
     // DELETE button   
     if (digit === "DEL"){
       setValue(value.slice(0,-1));
+      setDotCounter(0);
     } 
 
      // CLEAR button
      if(digit === "C" && value.length > 0) {
         setValue([]);
         setStoredValue([]); // clear the value && answear
+        setDotCounter(0);
      }  
 
     // PLUS/MINUS operator 
@@ -101,21 +105,16 @@ function Calculator() {
      // DOT operator "."
           // Increment the dot counter if the user clicks on the "." button
     if (digit === ".") {
-      console.log("12 .");
       let counter = dotCounter;
-          counter++;
-          setDotCounter(counter); // start to count the dots
-          console.log("dots", dotCounter);         
-          // Do not allow the user to enter a "." if the dot counter is greater than 0
-          if(dotCounter === 0){
-            console.log("13-.");
-            setValue([...value, digit]);
-          }
-          else if (dotCounter > 0 && prevValue.includes(".")) {
-            console.log("14-.");
-          setValue([...value,digit]);
-        }  
-      } 
+      counter++;
+      setDotCounter(counter); // start to count the dots
+      if(dotCounter === 0) {
+          setValue([...value, digit]);
+        } else {
+          return;
+      }
+    }
+       
      // PERCENT button - %
     //   if(digit === "%" && value.length > 0) {
     //     console.log("12-%");
@@ -196,6 +195,6 @@ function Calculator() {
                 </div>
             </div>
     );
-};
+                };
 
 export default Calculator;
