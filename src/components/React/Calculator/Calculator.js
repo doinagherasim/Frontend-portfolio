@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./calculator.css";
 import {useState} from "react";
-import math from "mathjs";
 
 function Calculator() {
   const math = require("mathjs");
@@ -10,16 +9,16 @@ function Calculator() {
   const [value, setValue] = useState([]);
   const [prevOperator, setPrevOperator] = useState("");
 
-    const operatorsTop = ["DEL","C", "+/-", "%"];
-    const digits =[ 7, 8, 9, 4, 5, 6, 1, 2, 3];
-    const operatorsRight = ["/","*","-","+"];
-    const operatorsBottom = [0, ".","="];
-    const [storedValue, setStoredValue] = useState([]);
-    const [result, setResult] = useState(0);
-    const [dotCounter, setDotCounter] = useState(0);
-    const [prevValue, setPrevValue] = useState([]);
-    const [minus, setMinus] =useState(false);;
-    // const [index, setIndex] = useState(null);
+  const operatorsTop = ["DEL","C", "+/-", "%"];
+  const digits =[ 7, 8, 9, 4, 5, 6, 1, 2, 3];
+  const operatorsRight = ["/","*","-","+"];
+  const operatorsBottom = [0, ".","="];
+
+  const [storedValue, setStoredValue] = useState([]);
+  const [dotCounter, setDotCounter] = useState(0);
+  const [prevValue, setPrevValue] = useState([]);
+  const [minus, setMinus] =useState(false);
+  const [valueLenght, setValueLenght] = useState(0);
   
     
     // 2. clickHndler for each digit
@@ -28,28 +27,24 @@ function Calculator() {
     const operators = ["+", "-", "*", "/","%"];  // Array of operators
 
     if (operators.includes(prevOperator) && operators.includes(digit)) {
-      console.log("1");
       setValue([...prevValue,digit]);
+      setStoredValue(value);
         return;  // Do not allow the user to enter two or more operators one after another
-      } 
+      }
         else if ((operatorsTop.includes(digit) ||  operatorsRight.includes(digit) || digit === 0)
         && value.length === 0){
-          console.log("2");
         setValue([]); // do not allow user to enter operators if there is no digits
        } 
-       else if(digits.includes(digit) || digit === 0){
-        console.log("4");
-        setValue([...value, digit]); // return the digit value if it is a number
-        setPrevOperator(digit);
-       } 
+       else if((digits.includes(digit) || digit === 0)){   
+          setValue([...value, digit]); // return the digit value if it is a number
+          setPrevOperator(digit);
+          setStoredValue(value);}
        else if(operators.includes(digit)){
-        console.log("5");
         if(digit === "-"){
         setMinus(true);
         setDotCounter(0);
         }
         if(digit === "+" || digit === "/" || digit === "*") {
-          console.log("6");
           setMinus(false);
           setDotCounter(0);
         }
@@ -63,15 +58,14 @@ function Calculator() {
     // DELETE button   
     if (digit === "DEL"){
       setValue(value.slice(0,-1));
+      setStoredValue(value.slice(0,-1));
       setDotCounter(0);
     } 
 
      // CLEAR button
-     if(digit === "C" && value.length > 0) {
-        setValue([]);
-        setStoredValue([]); // clear the value && answear
-        setDotCounter(0);
-     }  
+     if(digit === "C" && value.length > 0){
+      window.location.reload();
+     }
 
     // PLUS/MINUS operator 
     if (digit === "+/-") {
@@ -81,7 +75,7 @@ function Calculator() {
       const operatorIndex = value.length - lastOperatorIndex-1; // index of the operator
       const nextIndex = operatorIndex + 1; // next index after operator
       if(hasOperator) {
-        if( (value[nextIndex] !== "-")) {
+        if( (value[nextIndex] !== "-" && minus === false)) {
         value.splice(nextIndex,0,"-");
         setValue([...value]);
         setStoredValue(value);
@@ -105,11 +99,10 @@ function Calculator() {
     }
     
      // DOT operator "."
-          // Increment the dot counter if the user clicks on the "." button
     if (digit === ".") {
       let counter = dotCounter;
-      counter++;
-      setDotCounter(counter); // start to count the dots
+      counter++; // Increment the dot counter if the user clicks on the "." button
+      setDotCounter(counter); 
       if(dotCounter === 0) {
         if(value.length === 0) {
           setValue([0,...value, digit]);
@@ -120,57 +113,49 @@ function Calculator() {
           return;
       }
     }
-       
-     // PERCENT button - %
-    //   if(digit === "%" && value.length > 0) {
-    //     console.log("12-%");
-    //     console.log("val-%", value);
-    //     const firstNr = Number(value.join(""));
-    //     let result;
-    //     result =firstNr/100;
-    //     setValue([result]);  
-    //     setStoredValue(firstNr+operator + "%");   
-    //     setResult([result]);
-    //  } 
-
-
+    
      // EQUAL button - "=" and Calculation
     if (digit === "=" && value.length >1) { 
-      console.log("16-=");
-      // let newValue = value.find("X");
       let operation = value.join("");
-      const result = math.evaluate(operation);
-            setValue([result]);  
-            setStoredValue(operation);   
-            setResult([result]);
-          
+      const calcResult = math.evaluate(operation);
+            setValue([calcResult]);  
+            setStoredValue(operation); 
           if (digit === "=" && value.length === 0) {
-            console.log("17-=");
             setValue([]);  // Do not allow the user to press "=" if there are no values in the array
           } 
           else if (digit === "=" && value.length === 1) {
-            console.log("18-=");
             setValue(value);
             setStoredValue(value);
             return;
           }
         };
+        console.log("vallen", valueLenght);
+        if (value.length > 18){
+          setValueLenght(18);
+        } if (value.length > 32){
+          setValueLenght(32);
+        } if (value.length > 45)
+          setValueLenght(45);
       };
    
-      
-        
-     
-
    return (
         <div className="container">
             <div className="calculator_container">
                 <div className="screen_container">
-                    <p className="displayDigit">{storedValue}</p>
-                    <p className="screen">{value}</p></div>
+                    <p className={valueLenght < 18 
+                    ? "stored screen2" : valueLenght >= 18 && valueLenght < 32 
+                    ? "stored screen3" : valueLenght >= 32 && valueLenght < 42
+                    ? "stored screen4" : "stored screen5"}>{storedValue}</p>
+                    <p className={valueLenght < 18 
+                    ? "screen screen1" : valueLenght >= 18 && valueLenght < 32
+                    ? "screen screen2" : valueLenght >= 32 && valueLenght < 42
+                    ? "screen screen3" : "screen screen4"
+                  } >{value}</p></div>
 
                 <div className="buttonBox buttonBoxTop">{
                     operatorsTop.map((element, index)=>
-                    <button className={"button btnGrey"} key={index} 
+                    <button className={(element === "DEL" || element === "C") 
+                    ? "button del" : "button btnGrey"} key={index} 
                     onClick={()=>{clickHandler(element);}}>
                         <p className="text">{element}</p></button>
                     )}
@@ -193,14 +178,14 @@ function Calculator() {
                 </div>
                 <div className="buttonBox buttonBoxRight">{
                     operatorsRight.map((element, index)=>
-                    <button className="button btnOrange" key={index} 
+                    <button className={"button btnGrey"} key={index} 
                     onClick={()=> {clickHandler(element);}}>
-                        <p className="text">{element}</p></button>
+                        <p className={element === "*" ? "asterisk" : "text"}>{element}</p></button>
                     )}
                   </div>
                 </div>
             </div>
-    );
-                };
+          );
+};
 
 export default Calculator;
