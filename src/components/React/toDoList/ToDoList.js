@@ -85,7 +85,7 @@ function ToDoList () {
                     }
                 </div>
                 <form onSubmit={addTask} className={classes.input}>
-                    <input type="text" name="item" id="index" placeholder="Add a new task"/>
+                    <input type="text" name="item" id="index" placeholder=" Add a new task"/>
                     <button type="submit" className={`${classes.btn} ${classes.btn_add}`}>Add</button>
                 </form>
             </div>
