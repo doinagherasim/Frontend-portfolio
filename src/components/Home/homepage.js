@@ -3,7 +3,6 @@ import frontend from "../../assets/frontend.png";
 function HomePage() {
   return (
     <div className="containe-home">
-        <img className="background" src={frontend}/>
         <div className="header">
             <div>gmail</div>
             <div>

@@ -1,11 +1,10 @@
 .containe-home {
     width: 100%;
-    position: fixed;
     margin: 0 auto;
     margin-top: 0px;
     margin-left: 0px;
+    background:transparent;
+    position: absolute;
 }
-.background {
-    width: 100%;
-    z-index: -1;
+.header {
 }
