@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import classes from "./responsivelayout.module.css"; 
-import GTD from "../../../assets/GTD.png";
+import GTD from "../../../../assets/GTD.png";
 
 function ResponsiveLayout() {
     let navigateHome = useNavigate();

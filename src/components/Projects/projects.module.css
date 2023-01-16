@@ -17,7 +17,6 @@
   width: 100%;
   align-items: center;
   padding: 10px;
-  border: 1px solid grey;
 }
 
 .project_wrap {
@@ -25,33 +24,31 @@
   display: flex;
   justify-content: center;
   background: linear-gradient(white, #a29d9d);
-  width: 300px;
-  height: 390px;
+  width: 25%;
+  height: 430px;
   margin: 10px;
 }
 .image {
   margin-top: 10px;
   position: absolute;
-  width: 250px;
+  width: 90%;
   border-radius: 5px;
 }
-.layout {
-  width:230px;
-}
+
 .calculator {
-  width: 185px;
+  width: 62%;
 }
 .btn {
   position: absolute;
   text-align: center;
   background-color: #777777;
-  width: 15rem;
-  height: 3.3em;
+  width: 70%;
+  height: 40px;
   color: white;
   font-size: 15px;
   border-radius: 0.7em;
   cursor: pointer;
-  bottom: 10px;
+  bottom: 60px;
   border: none;
 }
 
@@ -65,6 +62,9 @@
   background-color: #2c2c2c;
   color: white;
   cursor: pointer;
+}
+.btnGit {
+ bottom: 10px;
 }
 
 
