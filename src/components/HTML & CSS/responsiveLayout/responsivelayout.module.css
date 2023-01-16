@@ -16,7 +16,7 @@
    margin-top: 1em;
 }
 
-h1 {
+.h1 {
     font-family: "unbutu", sans-serif;
     text-align: center;
     margin-top: 1em;
@@ -39,7 +39,7 @@ li {
     list-style: none;
 }
 
-img {
+.image {
     width: 100%;
     margin: 1em 0;
 }

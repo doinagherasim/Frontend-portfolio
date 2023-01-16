@@ -3,16 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./components/login/Login";
 import Calculator from "./components/React/Calculator/Calculator";
 import ResponsiveLayout from "./components/HTML & CSS/responsiveLayout/responsivelayout";
-import PropsProject from "./components/React/propsProject/project3";
 import ToDoList from "./components/React/toDoList/ToDoList";
-import JavaScriptPractice from "./components/JAVASCRIPT/JavaScriptPractice";
 import PasswordGenerator from "./components/React/passwordGenerator/passwordGenerator";
-
-// The following projects 
-// - TO DO LIST
-// - PASSWORD GENERATOR
-// - CALCULATOR APP 
-// - RESPONSIVE LAYOUT
 
 function App() {
   return (
@@ -23,8 +15,6 @@ function App() {
         <Route path='/password' exact element={<PasswordGenerator />} /> 
         <Route path='/calculator' exact element={<Calculator />} />
         <Route path='/responsivelayout' exact element={< ResponsiveLayout />} />
-        <Route path='/javascript' exact element={<JavaScriptPractice />} />  
-        <Route path='/props' exact element={<PropsProject />} />   
       </Routes >
     </div >
   );

@@ -11,8 +11,8 @@ function ResponsiveLayout() {
     return (
         <div className={classes.container}>
             <div className={classes.home}><button className={classes.btn_home} onClick={home}>  BACK </button></div>
-            <h1>Getting Things Done: The Ultimate Guide to Personal Productivity</h1>
-            <div className={classes.wrap}><img src={GTD} alt="gtd"></img></div>
+            <h1 className={classes.h1}>Getting Things Done: The Ultimate Guide to Personal Productivity</h1>
+            <div className={classes.wrap}><img className={classes.image} src={GTD} alt="gtd"></img></div>
             <div className={classes.column}>
                 <div className={`${classes.col1}`}>
                     <h2>What is GTD?</h2>

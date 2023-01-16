@@ -31,6 +31,7 @@
 .screen{
   margin-right: 5px;
   height: 20px;
+  margin-left:5px;
 }
 .screen1 {
   font-size: 30px;
@@ -51,6 +52,7 @@
 .stored {
   color: grey;
   height:0px;
+  margin-left:5px;
   }
 .buttonBox{
   border: 1px solid #0bf4a200;

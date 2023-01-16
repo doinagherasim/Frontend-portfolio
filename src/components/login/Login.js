@@ -1,5 +1,10 @@
 import classes from "./login.module.css";
 import { useNavigate } from "react-router-dom";
+import Calculator from "../../assets/Calculator.png";
+import ToDoList from "../../assets/ToDoList.png";
+import Password from "../../assets/Password.png";
+import LayoutDskt from "../../assets/LayoutDskt.png";
+import LayoutPhone from "../../assets/LayoutPhone.png";
 
 
 function Login() {
@@ -17,24 +22,28 @@ function Login() {
     const Project4 = () => {
         navigate("/responsivelayout");
     };
-    const Project5 = () => {
-        navigate("/javascript");
-    };
-    const Project6 = () => {
-        navigate("/props");
-    };
-
 
     return <div>
         <div className={classes.container}>
             <h1 className={classes.title}> Summary of projects</h1>
-            <div className={classes.btn_wrapper}>
-            <button className={`${classes.btn} ${classes.btn_1}`} onClick={Project1}>Project 1- To Do List - react</button>
-            <button className={`${classes.btn} ${classes.btn_2}`} onClick={Project2}>Project 2- Password Generator -react</button>
-            <button className={`${classes.btn} ${classes.btn_3}`} onClick={Project3}>Project 3- Calculator</button>
-            <button className={`${classes.btn} ${classes.btn_4}`} onClick={Project4}>Project 4- Responsive Layout <br></br> 🖥️ → 📱</button>
-            <button className={`${classes.btn} ${classes.btn_5}`} onClick={Project5}>Project 5- JavaScript practice</button>
-            <button className={`${classes.btn} ${classes.btn_6}`} onClick={Project6}>Project 6- Props</button>
+            <h3>1. Small projects</h3>
+            <div className={classes.wrapper}>
+                <div className={classes.project_wrap}>
+                    <img className={`${classes.image} ${classes.layout}`} src={LayoutDskt} alt="layout"/>
+                    <button className={`${classes.btn}`} onClick={Project4}>RESPONSIVE LAYOUT<br></br> 🖥️ → 📱</button>
+                </div>
+                <div className={classes.project_wrap}>
+                    <img className={classes.image} src={ToDoList} alt="todo"></img>
+                    <button className={`${classes.btn}`} onClick={Project1}>TO DO LIST</button>
+                </div>
+                <div className={classes.project_wrap}>
+                    <img className={classes.image} src={Password} alt="password"></img>   
+                    <button className={`${classes.btn}`} onClick={Project2}>PASSWORD GENERATOR</button>
+                </div>
+                <div className={classes.project_wrap}>
+                    <img className={`${classes.image} ${classes.calculator}`} src={Calculator} alt="calculator"></img> 
+                    <button className={`${classes.btn}`} onClick={Project3}>CALCULATOR</button> 
+                </div>
             </div> 
             </div>  
     </div >;
