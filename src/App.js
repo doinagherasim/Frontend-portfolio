@@ -6,6 +6,7 @@ import Calculator from "./components/Projects/React/Calculator/Calculator";
 import ResponsiveLayout from "./components/Projects/HTML & CSS/responsiveLayout/responsivelayout";
 import ToDoList from "./components/Projects/React/toDoList/ToDoList";
 import PasswordGenerator from "./components/Projects/React/passwordGenerator/passwordGenerator";
+import Certificates from "./components/Certificates/Certificates";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/password' exact element={<PasswordGenerator />} /> 
         <Route path='/calculator' exact element={<Calculator />} />
         <Route path='/responsivelayout' exact element={< ResponsiveLayout />} />
+        <Route path='/certificates' exact element={<Certificates />} />
       </Routes >
     </div >
   );

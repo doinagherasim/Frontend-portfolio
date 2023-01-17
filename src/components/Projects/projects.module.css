@@ -5,7 +5,7 @@
   z-index: 1;
   top:0px;
   left:0px;
-  background-color: rgba(0, 0, 0, 0.794)
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
 }
 .title {
   font-size: 25px;

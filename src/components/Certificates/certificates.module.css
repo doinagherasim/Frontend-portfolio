@@ -1,0 +1,32 @@
+.container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    top: 0px;
+    left: 0px;
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
+    z-index:1;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 110px;
+    margin-top:130px;
+    margin-right:60px;
+}
+.title {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.zoom {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+}
+.zoom:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+.btnDetails {
+
+}  

@@ -1,7 +1,13 @@
 import classes from "./homePage.module.css";
 import gmail from "../../assets/gmail.png";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
+  let navigate = useNavigate();
+
+    const allprojects = () => {
+        navigate("/allprojects");
+    };
 
   return (
     <div className={classes.containerHome}>
@@ -14,7 +20,7 @@ function HomePage() {
                 <ul className={classes.menu_ul}>
                     <li>About me</li>
                     <li>Resources</li>
-                    <li>Certificates</li>
+                    <li><a className={classes.link} href="/certificates"> Certificates</a></li>
                     <li><a className={classes.link} href="/allprojects"> All projects</a></li>
                 </ul>
             </div>
@@ -23,7 +29,7 @@ function HomePage() {
           <div className={classes.center}>
               <h1 className={classes.name}>FRONTEND DEVELOPER</h1>
           </div>
-        <button className={classes.viewprojects}><a className={classes.projects} href="/allprojects">View projects</a></button>
+          <button className={`${classes.viewprojects}`} onClick={allprojects}>VIEW PROJECTS</button>
         </div>
     </div>
   );

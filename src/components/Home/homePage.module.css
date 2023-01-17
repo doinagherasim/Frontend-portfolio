@@ -5,7 +5,7 @@
     margin: 0 auto;
     top: 0px;
     left: 0px;
-    background-color: rgba(0, 0, 0, 0.794);
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
     z-index:1;
 }
 .header {
@@ -48,10 +48,6 @@
 .link{
   color:white;
 }
-.projects {
-    text-decoration: none;
-    color: white;
-}
 .container_center{
     position: relative;
     top: 20%;
@@ -78,6 +74,11 @@ border: 2px solid white;
 color: white;
 width: 150px;
 height: 60px;
-font-size: 20px;
+font-size: 15px;
 background-color: rgba(0, 0, 0, 0.236);
+}
+.viewprojects:hover {
+    background-color: white;
+    cursor: pointer;
+    color: black;
 }
