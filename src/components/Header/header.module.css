@@ -67,9 +67,7 @@
 }
 .link:active {
     text-decoration: underline;
-    visibility: visible;
 }
 .link::after {
     text-decoration: underline;
-    visibility: visible;
 }

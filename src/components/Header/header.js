@@ -19,7 +19,7 @@ function Header(){
                     <li>About me</li>
                     <li>Resources</li>
                     <li><a className={classes.link} href="/certificates"> Certificates</a></li>
-                    <li><a className={classes.link} href="/allprojects"> All projects</a></li>
+                    <li><a className={classes.link} href="/allprojects/small_projects"> All projects</a></li>
                 </ul>
             </div>
         </div>

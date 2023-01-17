@@ -1,13 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/Home/homepage";
-import AllProjects from "./components/Projects/projects";
 import Calculator from "./components/Projects/React/Calculator/Calculator";
 import ResponsiveLayout from "./components/Projects/HTML & CSS/responsiveLayout/responsivelayout";
 import ToDoList from "./components/Projects/React/toDoList/ToDoList";
 import PasswordGenerator from "./components/Projects/React/passwordGenerator/passwordGenerator";
 import Certificates from "./components/Certificates/Certificates";
 import Header from "./components/Header/header";
+import SmallProjects from "./components/Projects/smallProjects";
+import MediumProjects from "./components/Projects/mediumProjects";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Header/>
       <Routes>
       <Route path='/' exact element={<HomePage />} />
-        <Route path='/allprojects' exact element={<AllProjects />} />
+        <Route path='/allprojects/small_projects' exact element={<SmallProjects />} />
+        <Route path='/allprojects/medium_projects' exact element={<MediumProjects />} />
         <Route path='/todolist' exact element={<ToDoList />} />
         <Route path='/password' exact element={<PasswordGenerator />} /> 
         <Route path='/calculator' exact element={<Calculator />} />
