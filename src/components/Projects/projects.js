@@ -4,6 +4,7 @@ import Calculator from "../../assets/Calculator.png";
 import ToDoList from "../../assets/ToDoList.png";
 import Password from "../../assets/Password.png";
 import ResponsiveDesign from "../../assets/ResponsiveDesign.png";
+import Header from "../Header/header";
 
 
 function AllProjects() {
@@ -23,6 +24,7 @@ function AllProjects() {
     };
 
     return <div>
+        <Header/>
         <div className={classes.container}>
             <h1 className={classes.title}> Summary of projects</h1>
             <h3>1. Small projects</h3>
