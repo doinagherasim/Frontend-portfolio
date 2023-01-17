@@ -13,12 +13,15 @@
     display: flex;
     justify-content: space-between;
     margin-left: 110px;
-    margin-top:130px;
+    margin-top: 110px;
     margin-right:60px;
 }
 .title {
     margin-left: 40px;
-    margin-top: 40px;
+    margin-top: 120px;
+    text-align: center;
+    font-size: 30px;
+  font-family: "lora" serif;
 }
 .zoom {
     transition: transform .2s; /* Animation */

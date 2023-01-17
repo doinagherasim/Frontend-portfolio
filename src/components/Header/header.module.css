@@ -11,31 +11,65 @@
 .contact {
     width: 50%;
     display: flex;
-    margin-top: 50px;
+    margin-top: 0px;
     margin-left: 50px;
     flex-direction: row;
     justify-content: flex-start;
+    position: relative;
 }
 .contactImg {
-    margin-top: 7px;
-    padding: 8px;
+    margin-top: 13px;
+    padding: 5px;
 }
 .mail {
     color:white;
     text-decoration: none;
     margin-top: 18px;
+    height: 10px;
+    font-size: 12px;
+}
+.home {
+    position: absolute;
+    bottom: 18px;
+    left: 4px;
+    color: white;
+    text-decoration: none;
 }
 .menu {
     width: 50%;
     position: relative;
+    height: 50%;
+}
+.number {
+    position: absolute;
+    right: 50px;
+    font-size: 12px;
+}
+.numberImg {
+    position: absolute;
+    right: 120px;
+    top: 10px;
+    opacity: 80%;
 }
 .menu_ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-right: 20px;
+    margin-right: 45px;
     margin-top: 50px;
 }
 .link{
   color:white;
+  text-decoration: none;
+}
+.link:hover {
+    text-decoration: underline;
+}
+.link:active {
+    text-decoration: underline;
+    visibility: visible;
+}
+.link::after {
+    text-decoration: underline;
+    visibility: visible;
 }

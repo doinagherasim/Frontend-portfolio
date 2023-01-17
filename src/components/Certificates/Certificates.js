@@ -2,12 +2,10 @@ import classes from "./certificates.module.css";
 import htmlCertificate from "../../assets/HTMLCSS.png";
 import jsCertificate from "../../assets/jsCertificate.png";
 import reactCertificate from "../../assets/reactCertificate.png";
-import Header from "../Header/header";
 
 function Certificates(){
     return (
         <div className={classes.container}>
-            <Header/>
             <h1 className={classes.title}>Certificates 2022- 2023</h1>
             <div className={classes.wrapper}>
             <div className={classes.certificate}>

@@ -7,10 +7,12 @@ import ResponsiveLayout from "./components/Projects/HTML & CSS/responsiveLayout/
 import ToDoList from "./components/Projects/React/toDoList/ToDoList";
 import PasswordGenerator from "./components/Projects/React/passwordGenerator/passwordGenerator";
 import Certificates from "./components/Certificates/Certificates";
+import Header from "./components/Header/header";
 
 function App() {
   return (
     <div>
+      <Header/>
       <Routes>
       <Route path='/' exact element={<HomePage />} />
         <Route path='/allprojects' exact element={<AllProjects />} />

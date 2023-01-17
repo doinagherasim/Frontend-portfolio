@@ -1,14 +1,20 @@
 import classes from "./header.module.css";
 import gmail from "../../assets/gmail.png";
+import number from "../../assets/number.png";
 
 function Header(){
     return(
       <div className={classes.header}>
-            <div className={classes.contact}>
-              <img className={classes.contactImg} src={gmail} width="40" height="40"/>
+
+        <div className={classes.contact}>
+              <img className={classes.contactImg} src={gmail} width="25" height="25"/>
               <a href="mailto:gherasimdoina93@gmail.com" className={classes.mail}> gherasimdoina93@gmail.com</a>
-            </div>
+              <a className={classes.home} href="/">H O M E</a>
+        </div>
+
             <div className={classes.menu}>
+            <p className={classes.number}>0733121450</p>
+            <img className={classes.numberImg} src={number} width="20" height="20"/>
                 <ul className={classes.menu_ul}>
                     <li>About me</li>
                     <li>Resources</li>

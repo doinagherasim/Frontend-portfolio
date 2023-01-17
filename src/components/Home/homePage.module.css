@@ -8,46 +8,6 @@
     background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
     z-index:1;
 }
-.header {
-    width: 100%;
-    height: 100px;
-    background-color: rgba(0, 0, 0, 0.369);
-    display: flex;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-}
-.contact {
-    width: 50%;
-    display: flex;
-    margin-top: 50px;
-    margin-left: 50px;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-.contactImg {
-    margin-top: 7px;
-    padding: 8px;
-}
-.mail {
-    color:white;
-    text-decoration: none;
-    margin-top: 18px;
-}
-.menu {
-    width: 50%;
-    position: relative;
-}
-.menu_ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 20px;
-    margin-top: 50px;
-}
-.link{
-  color:white;
-}
 .container_center{
     position: relative;
     top: 20%;
@@ -62,7 +22,7 @@
     left: 0px;
 }
 .name{
-font-size: 70px;
+    font-size: 70px;
 }
 .margin {
     margin-top: 10px;

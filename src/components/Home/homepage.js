@@ -1,7 +1,6 @@
 import classes from "./homePage.module.css";
 import gmail from "../../assets/gmail.png";
 import { useNavigate } from "react-router-dom";
-import Header from "../Header/header";
 
 function HomePage() {
   let navigate = useNavigate();
@@ -12,7 +11,6 @@ function HomePage() {
 
   return (    
     <div>
-      <Header/>
        <div className={classes.containerHome}>
         <div className={classes.container_center}>
           <div className={classes.center}>
