@@ -94,5 +94,45 @@
 .btnGit {
  bottom: 10px;
 }
-
+.projectWrap {
+  position: relative;
+  width: 49%;
+  height: 440px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  justify-content: space-between;
+  background: linear-gradient(rgba(255, 255, 255, 0.692), #00cdd440);
+}
+.img {
+  width: 310px;
+  height: 255px;
+  border-radius: 20px;
+  top: 5px;
+  margin: 7px;
+}
+.btnwrap {
+    position: absolute;
+    height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    bottom: 10px;
+    left: 35%;
+}
+.btnMedium {
+  text-align: center;
+  background-color: #19b7baa3;
+  width: 200px;
+  height: 40px;
+  color: white;
+  font-size: 15px;
+  border-radius: 0.7em;
+  cursor: pointer;
+  bottom: 60px;
+  border: none;
+}
+.btnMedium:hover {
+  background-color: #0a3d3ea8;
+}
 

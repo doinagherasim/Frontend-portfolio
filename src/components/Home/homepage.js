@@ -1,12 +1,11 @@
 import classes from "./homePage.module.css";
-import gmail from "../../assets/gmail.png";
 import { useNavigate } from "react-router-dom";
 
 function HomePage() {
   let navigate = useNavigate();
 
     const allprojects = () => {
-        navigate("/allprojects");
+        navigate("/allprojects/small_projects");
     };
 
   return (    
