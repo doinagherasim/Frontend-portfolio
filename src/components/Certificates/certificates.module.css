@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     margin-left: 110px;
-    margin-top: 110px;
+    margin-top: 80px;
     margin-right:60px;
 }
 .title {
@@ -31,5 +31,24 @@
     transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 .btnDetails {
-
+  border: none;
+  background-color: #19b7baa3;
+  height: 30px;
+  color: white;
 }  
+.btnDetails:hover {
+  background-color: #19b7ba;
+}
+.details {
+  display: block;
+  border: 1px solid white;
+  font-size: 15px;
+  width: 90%;
+  height: 125px;
+  overflow: scroll;
+  background-color: white;
+  color:black;
+}
+.hidden {
+  display: none;
+}
