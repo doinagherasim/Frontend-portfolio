@@ -3,8 +3,20 @@
     margin: 0 auto; 
     max-width: 960px;
     background-color: white;
+    color: black;
+    margin-top: 100px;
+    z-index:2;
 }
-
+.container1 {
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  top: 0px;
+  left: 0px;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
+  margin-top: -7px;
+  margin-left: -8px;
+}
 .btn_home{
     background-color: rgb(220, 220, 220);
     width: 20%;

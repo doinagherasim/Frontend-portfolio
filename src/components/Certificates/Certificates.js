@@ -11,7 +11,8 @@ function Certificates() {
             id: 0,
             src: htmlCertificate,
             title: "HTML and CSS certificate",
-            details: ` - modern CSS, including flexbox and CSS Grid for layout;
+            details: ` 
+- modern CSS, including flexbox and CSS Grid for layout;
  - important CSS concepts such as the box model, positioning 
 schemes, inheritance, solving selector conflicts, etc.;
  - responsive design.`,
@@ -21,7 +22,8 @@ schemes, inheritance, solving selector conflicts, etc.;
             id: 1,
             src: jsCertificate,
             title: "JavaScript certificate",
-            details: ` - JavaScript fundamentals: variables, if/else, operators, 
+            details: `
+ - JavaScript fundamentals: variables, if/else, operators, 
 boolean logic, functions, arrays, objects, loops, strings;
  - arrow functions, destructuring, spread operator, 
 default arguments;
@@ -34,8 +36,9 @@ default arguments;
             id: 2,
             src: reactCertificate,
             title: "React certificate",
-            details: ` - core basics: How React works, building components with React 
-& building UIs with React;
+            details: ` 
+- core basics: How React works, building components with 
+React & building UIs with React;
  - components, props & dynamic data binding;
  - user events and state;
  - react Hooks;

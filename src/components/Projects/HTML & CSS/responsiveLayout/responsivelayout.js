@@ -3,14 +3,10 @@ import classes from "./responsivelayout.module.css";
 import GTD from "../../../../assets/GTD.png";
 
 function ResponsiveLayout() {
-    let navigateHome = useNavigate();
-    const home = () => {
-        navigateHome("/");
-    };
 
     return (
+        <div className={classes.container1}>
         <div className={classes.container}>
-            <div className={classes.home}><button className={classes.btn_home} onClick={home}>  BACK </button></div>
             <h1 className={classes.h1}>Getting Things Done: The Ultimate Guide to Personal Productivity</h1>
             <div className={classes.wrap}><img className={classes.image} src={GTD} alt="gtd"></img></div>
             <div className={classes.column}>
@@ -82,6 +78,7 @@ function ResponsiveLayout() {
                 <p>DAVID ALLEN</p>
                </div>
                </div>
+</div>
 </div>
     );
 };
