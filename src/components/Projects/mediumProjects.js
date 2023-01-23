@@ -16,7 +16,9 @@ function MediumProjects () {
                     <img src={cat_app} className={classes.img}/>
                     <div className={classes.btnwrap}>
                     <button className={`${classes.btnMedium}`}>CAT FOOD APP</button>
-                    <button className={`${classes.btnMedium} ${classes.btnGit}`}>GitHub Code</button>
+                    <a href="https://github.com/Doina2323/CAT-SMART-APP/tree/master/src" 
+                    className={`${classes.btnMedium} ${classes.btnGit}`} target="_blank">
+                    <p className={classes.git}>GitHub Code</p></a>
                     </div>
                 </div>
                 <div className={classes.projectWrap}>
@@ -24,7 +26,9 @@ function MediumProjects () {
                     <img src={diceGameWinner} className={classes.img}/>
                     <div className={classes.btnwrap}>
                     <button className={`${classes.btnMedium}`}>DICE GAME</button>
-                    <button className={`${classes.btnMedium} ${classes.btnGit}`}>GitHub Code</button>
+                    <a href="https://github.com/Doina2323/Dice-Game/tree/master/src" 
+                    className={`${classes.btnMedium} ${classes.btnGit}`} target="_blank">
+                    <p className={classes.git}>GitHub Code</p></a>
                     </div>
                 </div>
             </div> 
