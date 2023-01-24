@@ -44,7 +44,6 @@
     position: absolute;
     bottom: 30px;
     left: 1px;
-    opacity: 80%;
 }
 .menu_ul {
     display: flex;
@@ -65,4 +64,14 @@
 }
 .link::after {
     text-decoration: underline;
+}
+.linkin {
+    position: absolute;
+    bottom: 10px;
+    left: 1px;
+}
+.git {
+    position: absolute;
+    bottom: 10px;
+    left: 25px;
 }

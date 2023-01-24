@@ -12,10 +12,20 @@ function Certificates() {
             src: htmlCertificate,
             title: "HTML and CSS certificate",
             details: ` 
- - modern CSS, including flexbox and CSS Grid for layout;
- - important CSS concepts such as the box model, positioning 
-schemes, inheritance, solving selector conflicts, etc.;
- - responsive design.`,
+ - Selectors: used to select HTML elements and apply styles 
+to them;
+ - Box model: used to calculate the size and position of 
+elements on a web page;
+ - Layout: layout options, including flexbox and grid, which can 
+be used to create complex and responsive layouts;
+ - Typography: a wide range of options for controlling 
+typography, such as font size, font family, and text alignment;
+ - Transitions and animations: create animations and transitions 
+ between different states of an element;
+ - Flexbox and Grid: layout modules in CSS which are used 
+to create responsive and dynamic layouts;
+ - Media queries: used to apply different styles based on 
+the screen size and device type. `,
             show: false,
         },
         {
@@ -25,11 +35,13 @@ schemes, inheritance, solving selector conflicts, etc.;
             details: `
  - JavaScript fundamentals: variables, if/else, operators, 
 boolean logic, functions, arrays, objects, loops, strings;
- - arrow functions, destructuring, spread operator, 
+ - Event handling: haw to handle events such as clicks, 
+mouse movements, and keyboard input;
+ - Arrow functions, destructuring, spread operator, 
 default arguments;
- - JavaScript works behind the scenes;
- - object-oriented programming;
- - the event loop, promises, async/await, and error handling.`,
+ - Haw JavaScript works behind the scenes;
+ - Object-oriented programming;
+ - The event loop, promises, async/await, and error handling.`,
             show: false,
         },
         {
@@ -37,17 +49,22 @@ default arguments;
             src: reactCertificate,
             title: "React certificate",
             details: ` 
- - core basics: How React works, building components with 
+ - Core basics: How React works, building components with 
 React & building UIs with React;
- - components, props & dynamic data binding;
- - user events and state;
- - react Hooks;
- - sending Http requests & handling transitional states + 
+ - Components: build applications using a component-based 
+architecture, where each component is a self-contained piece of 
+code that can be reused throughout the application;
+ - State management: built-in state management system, 
+which allows developers to manage the state of their components 
+in a centralized and efficient way;
+ - Hooks: functions that allow developers to use state and other 
+React features in functional components, rather than 
+having to use class components;
+ - Sending Http requests & handling transitional states + 
 responses;
- - handling forms and user input, incl. validation;
- - routing with React Router;
- - combining React with TypeScript;
- - handling forms and user input, incl. validation.`,
+ - Handling forms and user input, incl. validation;
+ - Routing with React Router;
+ - Combining React with TypeScript.`,
             show: false,
         }
     ];

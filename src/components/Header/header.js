@@ -1,6 +1,8 @@
 import classes from "./header.module.css";
 import gmail from "../../assets/gmail.png";
 import number from "../../assets/number.png";
+import linkedin from "../../assets/linkedin.png";
+import git from "../../assets/git.png";
 
 function Header(){
     return(
@@ -9,15 +11,18 @@ function Header(){
         <div className={classes.contact}>
               <img className={classes.contactImg} src={gmail} width="25" height="25"/>
               <a href="mailto:gherasimdoina93@gmail.com" className={classes.mail}> gherasimdoina93@gmail.com</a>
-              <p className={classes.number}>0733121450</p>
+              <p className={classes.number}>+40-733-121-450</p>
               <img className={classes.numberImg} src={number} width="20" height="20"/>
+              <a href="https://www.linkedin.com/in/gherasim-doina-5707a146/" target="_blank"> 
+              <img className={classes.linkin} src={linkedin} width="15" height="15"/></a>
+              <a href="https://github.com/Doina2323" target="_blank"> 
+              <img className={classes.git} src={git} width="15" height="15"/></a>
              
         </div>
 
             <div className={classes.menu}>
                 <ul className={classes.menu_ul}>
                 <li><a className={classes.link} href="/">Home</a></li>
-                    <li>About me</li>
                     <li><a className={classes.link} href="/certificates"> Certificates</a></li>
                     <li><a className={classes.link} href="/allprojects/small_projects"> All projects</a></li>
                 </ul>
