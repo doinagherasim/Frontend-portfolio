@@ -29,7 +29,7 @@ const smallProjectsdetails = [
     alt: "layout",
     project: Project4,
     title: "RESPONSIVE LAYOUT 🖥️ → 📱",
-    href:"https://github.com/Doina2323/Responsive-Layout-destop-tablete-phone/tree/master/src"
+    href:"https://github.com/doinagherasim/Responsive-Layout-destop-tablete-phone/tree/master/src"
  },
 {
     id: 1,
@@ -37,7 +37,7 @@ const smallProjectsdetails = [
     alt: "todo",
     project: Project1,
     title: "TO DO LIST",
-    href:"https://github.com/Doina2323/To-Do-List-app/tree/master/src"
+    href:"https://github.com/doinagherasim/To-Do-List-app/tree/master/src"
 },
 {
     id: 2,
@@ -45,7 +45,7 @@ const smallProjectsdetails = [
     alt: "password",
     project: Project2,
     title: "PASSWORD GENERATOR",
-    href:"https://github.com/Doina2323/Password-Generator-app/tree/master/src"
+    href:"https://github.com/doinagherasim/Password-Generator-app/tree/master/src"
 },
 {
     id: 3,
@@ -53,7 +53,7 @@ const smallProjectsdetails = [
     alt: "calculator",
     project: Project3,
     title: "CALCULATOR",
-    href:"https://github.com/Doina2323/Password-Generator-app/tree/master/src"
+    href:"https://github.com/doinagherasim/Calculator-app/tree/master/src"
 }
 ];    
 

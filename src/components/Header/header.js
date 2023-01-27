@@ -13,9 +13,9 @@ function Header(){
               <a href="mailto:gherasimdoina93@gmail.com" className={classes.mail}> gherasimdoina93@gmail.com</a>
               <p className={classes.number}>+40-733-121-450</p>
               <img className={classes.numberImg} src={number} width="20" height="20"/>
-              <a href="https://www.linkedin.com/in/gherasim-doina-5707a146/" target="_blank"> 
+              <a href="https://www.linkedin.com/in/gherasimdoina/" target="_blank"> 
               <img className={classes.linkin} src={linkedin} width="15" height="15"/></a>
-              <a href="https://github.com/Doina2323" target="_blank"> 
+              <a href="https://github.com/doinagherasim" target="_blank"> 
               <img className={classes.git} src={git} width="15" height="15"/></a>
              
         </div>

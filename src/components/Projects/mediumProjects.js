@@ -21,7 +21,7 @@ function MediumProjects () {
                     <a href="https://cat-feed-app.web.app/" 
                     className={`${classes.btnMedium} ${classes.btnGit}`} target="_blank">
                     <p className={classes.git}>CAT FOOD APP</p></a>
-                    <a href="https://github.com/Doina2323/CAT-SMART-APP/tree/master/src" 
+                    <a href="https://github.com/doinagherasim/Feed-the-cat-app/tree/master/src" 
                     className={`${classes.btnMedium} ${classes.btnGit}`} target="_blank">
                     <p className={classes.git}>GitHub Code</p></a>
                     </div>
@@ -35,7 +35,7 @@ function MediumProjects () {
                     <a href="https://play-dice-game-online.web.app/" 
                     className={`${classes.btnMedium} ${classes.btnGit}`} target="_blank">
                     <p className={classes.git}>DICE GAME</p></a>
-                    <a href="https://github.com/Doina2323/Dice-Game/tree/master/src" 
+                    <a href="https://github.com/doinagherasim/Dice-Game/tree/master/src" 
                     className={`${classes.btnMedium} ${classes.btnGit}`} target="_blank">
                     <p className={classes.git}>GitHub Code</p></a>
                     </div>
