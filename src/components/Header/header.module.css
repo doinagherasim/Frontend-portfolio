@@ -75,3 +75,22 @@
     bottom: 10px;
     left: 25px;
 }
+
+@media (max-width: 675px){
+    .header {
+        flex-direction: column;
+    }
+    .contact {
+        display: none;
+    }
+    .menu {
+        display: flex;
+        margin-top: 15px;
+        width: 100%;
+        justify-content: center;
+    }
+    .menu_ul {
+        margin-right: 0px;
+        font-weight: bold;
+    }
+}

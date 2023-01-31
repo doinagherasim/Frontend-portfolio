@@ -5,6 +5,10 @@ import ToDoList from "../../assets/ToDoList.png";
 import Password from "../../assets/Password.png";
 import ResponsiveDesign from "../../assets/ResponsiveDesign.png";
 import AllProjects from "./projects";
+import login from "../../assets/login.png";
+import cat_app from "../../assets/cat_app.png";
+import diceGameWinner from "../../assets/diceGameWinner.png";
+import diceGame from "../../assets/diceGame.png";
 
 function SmallProjects() {
     let navigate = useNavigate();
@@ -62,7 +66,7 @@ const smallProjectsdetails = [
             <AllProjects/>
             <div className={classes.wrapper}>
                 {
-                    smallProjectsdetails.map((element, index) =>
+                    smallProjectsdetails.map((element) =>
                     <div className={classes.project_wrap}>
                         <img className={`${classes.image}`} src={element.src} alt={element.alt}/>
                         <button className={`${classes.btn}`} onClick={element.project}>{element.title}</button>
@@ -72,31 +76,7 @@ const smallProjectsdetails = [
                     </div>
                     )
                 }
-                {/* <div className={classes.project_wrap}>
-                    <img className={`${classes.image}`} src={ResponsiveDesign} alt="layout"/>
-                    <button className={`${classes.btn}`} onClicek={Project4}>RESPONSIVE LAYOUT<br></br> 🖥️ → 📱</button>
-                    <a href="https://github.com/Doina2323/Responsive-Layout-destop-tablete-phon" 
-                    className={`${classes.btn} ${classes.btnGit}`} target="_blank"><p className={classes.git}>GitHub Code</p></a>
                 </div>
-                <div className={classes.project_wrap}>
-                    <img className={classes.image} src={ToDoList} alt="todo"></img>
-                    <button className={`${classes.btn}`} onClick={Project1}>TO DO LIST</button>
-                    <a href="https://github.com/Doina2323/To-Do-List-app/tree/master/src" 
-                    className={`${classes.btn} ${classes.btnGit}`} target="_blank"><p className={classes.git}>GitHub Code</p></a>
-                </div>
-                <div className={classes.project_wrap}>
-                    <img className={classes.image} src={Password} alt="password"></img>   
-                    <button className={`${classes.btn}`} onClick={Project2}>PASSWORD GENERATOR</button>
-                    <a href="https://github.com/Doina2323/Password-Generator-app/tree/master/src" 
-                    className={`${classes.btn} ${classes.btnGit}`} target="_blank"><p className={classes.git}>GitHub Code</p></a>
-                </div>
-                <div className={classes.project_wrap}>
-                    <img className={`${classes.image}`} src={Calculator} alt="calculator"></img> 
-                    <button className={`${classes.btn}`} onClick={Project3}>CALCULATOR</button> 
-                    <a href="https://github.com/Doina2323/Calculator-app/tree/master/src" 
-                    className={`${classes.btn} ${classes.btnGit}`} target="_blank"><p className={classes.git}>GitHub Code</p></a>
-                </div> */}
-            </div> 
         </div>
     );
 }

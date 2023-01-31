@@ -17,11 +17,11 @@
 } 
 .center {
     position: absolute;
-    width:100px;
+    width:350px;
     height:100px;
     left: 0px;
 }
-.name{
+.name {
     font-size: 70px;
 }
 .margin {
@@ -41,4 +41,13 @@ background-color: rgba(0, 0, 0, 0.236);
     background-color: white;
     cursor: pointer;
     color: black;
+}
+.copyright {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    border-top: 1px solid white;
+}
+.rights{
+    font-size:10px;
 }

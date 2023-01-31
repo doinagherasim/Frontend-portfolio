@@ -7,7 +7,6 @@ import git from "../../assets/git.png";
 function Header(){
     return(
       <div className={classes.header}>
-
         <div className={classes.contact}>
               <img className={classes.contactImg} src={gmail} width="25" height="25"/>
               <a href="mailto:gherasimdoina93@gmail.com" className={classes.mail}> gherasimdoina93@gmail.com</a>
@@ -16,8 +15,7 @@ function Header(){
               <a href="https://www.linkedin.com/in/gherasimdoina/" target="_blank"> 
               <img className={classes.linkin} src={linkedin} width="15" height="15"/></a>
               <a href="https://github.com/doinagherasim" target="_blank"> 
-              <img className={classes.git} src={git} width="15" height="15"/></a>
-             
+              <img className={classes.git} src={git} width="15" height="15"/></a> 
         </div>
 
             <div className={classes.menu}>

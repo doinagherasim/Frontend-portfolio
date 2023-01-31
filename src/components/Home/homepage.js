@@ -13,9 +13,12 @@ function HomePage() {
        <div className={classes.containerHome}>
         <div className={classes.container_center}>
           <div className={classes.center}>
-              <h1 className={classes.name}>FRONTEND DEVELOPER</h1>
+              <h2 className={classes.name}>FRONTEND DEVELOPER</h2>
           </div>
           <button className={`${classes.viewprojects}`} onClick={allprojects}>VIEW PROJECTS</button>
+        </div>
+        <div className={classes.copyright}>
+            <p className={classes.rights}>© 2023 Doina Gherasim. All rights reserved.</p>
         </div>
     </div>
     </div>
