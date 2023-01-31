@@ -51,3 +51,14 @@ background-color: rgba(0, 0, 0, 0.236);
 .rights{
     font-size:10px;
 }
+@media (max-width: 675px){
+    .name {
+        font-size:40px;
+    }
+   .viewprojects {
+    bottom: 315px;
+    width: 135px;
+    height: 50px;
+    font-size: 13px;
+}
+}
