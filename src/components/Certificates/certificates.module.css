@@ -1,27 +1,29 @@
 .container {
     position: fixed;
     width: 100%;
-    height: 100%;
+    height: 170vh;
     margin: 0 auto;
     top: 0px;
     left: 0px;
     background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
     z-index:1;
+    margin-left: 0px;
 }
 
 .wrapper {
     display: flex;
+    width: 87%;
     justify-content: space-between;
     margin-left: 110px;
     margin-top: 80px;
-    margin-right:60px;
+    margin-right: 60px;
 }
 .title {
     margin-left: 40px;
     margin-top: 120px;
     text-align: center;
     font-size: 30px;
-  font-family: "lora" serif;
+    font-family: "lora" serif;
 }
 .zoom {
     transition: transform .2s; /* Animation */
@@ -53,5 +55,32 @@
   display: none;
 }
 .certificate {
-  width: 450px;
+  width: 80%;
+}
+
+@media (max-width: 750px) {
+  .container {
+    position: absolute;
+  }
+  .wrapper {
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left:27px;
+  }
+  .certificate {
+    width: 110%;
+  }
+  .zoom {
+    transition: none;
+}
+.zoom:hover {
+    transform: none;
+  }
+  .title {
+    margin-left: 6px;
+  }
+  .btnDetails {
+    margin-bottom: 25px;
+  }
 }

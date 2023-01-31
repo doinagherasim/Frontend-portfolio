@@ -137,9 +137,10 @@
     display: none;
 }
 
-@media (max-width: 675px){
+@media (max-width: 750px){
     .header {
         flex-direction: column;
+        height: 10%;
     }
     .contact {
         display: none;
