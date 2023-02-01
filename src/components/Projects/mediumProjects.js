@@ -10,8 +10,9 @@ function MediumProjects () {
         {id: 0,
         src1: login,
         src2: cat_app,
-        description: `App for cat lovers that will help you look after your cat and feed it properly.
-        <br></br>8 servings, plus 2 extra food.`,
+        description: `This app helps cat owners keep track of their cat's food intake.
+        The application also has an alert for extra servings, 
+        to help prevent overfeeding and ensure the cat's health.`,
         appLink: "https://cat-feed-app.web.app/",
         title: "CAT FOOD APP",
         gitHub: "https://github.com/doinagherasim/Feed-the-cat-app/tree/master/src"
@@ -19,8 +20,9 @@ function MediumProjects () {
       {id: 1,
         src1: diceGame,
         src2: diceGameWinner,
-        description: `The basic premise of the game is this: you roll the dice. Some combinations of dice will score points, while others don't, like 1. You take out the dice that have scored points and then decide whether to keep that score, or re-roll the remaining dice to try to score more points. Winning score is 20.
-        <br></br>`,
+        description: `Dice Game app for two players where the goal is to reach 20 points. 
+        Each turn, players roll a virtual dice and add to their score. If a 1 is rolled, the turn ends. 
+        Winning score is 20.`,
         appLink: "https://play-dice-game-online.web.app/",
         title: "DICE GAME",
         gitHub: "https://github.com/doinagherasim/Dice-Game/tree/master/src"
@@ -30,7 +32,7 @@ function MediumProjects () {
     return (
         <div>
             <AllProjects/>
-            <div className={classes.wrapper}>
+            <div className={`${classes.wrapper} ${classes.wrapperMedium}`}>
                { mediumProjects.map ((element) =>
             <div className={classes.projectWrap}>
                     <img src={element.src1} className={classes.img}/>

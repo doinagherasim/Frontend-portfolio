@@ -1,3 +1,5 @@
+/* both projects, small an medium */
+
 .container {
   position: fixed;
   width: 100%;
@@ -28,7 +30,9 @@
 .subtitle:active{
   text-decoration: underline;
 }
-
+.git {
+  margin-top: 10px;
+}
 .wrapper {
   margin: 0 auto;
   display: flex;
@@ -40,6 +44,7 @@
   margin-top: 240px;
 }
 
+/* small projects only */
 .project_wrap {
   position: relative;
   display: flex;
@@ -95,6 +100,9 @@
 .btnGit {
  bottom: 10px;
 }
+.wrapperMedium {
+
+}
 .projectWrap {
   position: relative;
   width: 49%;
@@ -144,9 +152,7 @@
 .btnMedium:hover {
   background-color: #0a3d3ea8;
 }
-.git {
-  margin-top: 10px;
-}
+
 .description {
   position: absolute;
     top: 260px;
@@ -157,7 +163,6 @@
     flex-direction: column;
     margin-top: 210px;
     height: 1900px;
-    border: 1px solid red;
   }
   .project_wrap {
     width: 100%;
@@ -166,6 +171,7 @@
   }
   .project_wrap:hover {
     transform: none;
+    
   }
   .subtitle {
     font-size: 20px;
@@ -175,13 +181,25 @@
     width: 100%;
     flex-wrap: nowrap;
     align-items: center;
-    /* position:static; */
+    height: 410px;
   }
   .img {
-    width: 200px;
-    height: 150px;
-  border-radius: 10px;
-  transition: none;
+    width: 160px;
+    height: 145px;
+    border-radius: 10px;
+    transition: none;
+    margin-bottom: 245px;
   }
+  .description {
+    top:165px;
+  }
+  .wrapperMedium {
+    margin-top: 210px;
+    height: 880px;
+  }
+  .btnwrap{
+    bottom: 35px;
+    left: 20%;
+}
 }
 
