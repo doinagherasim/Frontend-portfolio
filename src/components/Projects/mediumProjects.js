@@ -11,6 +11,7 @@ function MediumProjects () {
         <div>
             <AllProjects/>
             <div className={classes.wrapper}>
+                
                 <div className={classes.projectWrap}>
                     <img src={login} className={classes.img}/>
                     <img src={cat_app} className={classes.img}/>
@@ -26,6 +27,7 @@ function MediumProjects () {
                     <p className={classes.git}>GitHub Code</p></a>
                     </div>
                 </div>
+
                 <div className={classes.projectWrap}>
                     <img src={diceGame} className={classes.img}/>
                     <img src={diceGameWinner} className={classes.img}/>

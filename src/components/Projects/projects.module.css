@@ -152,4 +152,36 @@
     top: 260px;
     left: 10px;
 }
+@media (max-width: 750px){
+  .wrapper {
+    flex-direction: column;
+    margin-top: 210px;
+    height: 1900px;
+    border: 1px solid red;
+  }
+  .project_wrap {
+    width: 100%;
+    transition: none;
+    margin-right: 22px;
+  }
+  .project_wrap:hover {
+    transform: none;
+  }
+  .subtitle {
+    font-size: 20px;
+    margin-left: 30px;
+  }
+  .projectWrap {
+    width: 100%;
+    flex-wrap: nowrap;
+    align-items: center;
+    /* position:static; */
+  }
+  .img {
+    width: 200px;
+    height: 150px;
+  border-radius: 10px;
+  transition: none;
+  }
+}
 

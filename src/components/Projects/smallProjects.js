@@ -5,10 +5,6 @@ import ToDoList from "../../assets/ToDoList.png";
 import Password from "../../assets/Password.png";
 import ResponsiveDesign from "../../assets/ResponsiveDesign.png";
 import AllProjects from "./projects";
-import login from "../../assets/login.png";
-import cat_app from "../../assets/cat_app.png";
-import diceGameWinner from "../../assets/diceGameWinner.png";
-import diceGame from "../../assets/diceGame.png";
 
 function SmallProjects() {
     let navigate = useNavigate();
