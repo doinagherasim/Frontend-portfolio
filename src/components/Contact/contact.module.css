@@ -1,0 +1,76 @@
+.containerContact {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    top: 0px;
+    left: 0px;
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
+    z-index:1;
+}
+.container_center{
+    position: relative;
+    top: 20%;
+    left: 15%;
+    width:1000px;
+    height:530px;
+} 
+.center {
+    position: absolute;
+    width:350px;
+    height:100px;
+    left: 0px;
+}
+.name {
+    font-size: 40px;
+}
+.contact {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex-direction: column;
+    right: 15%;
+    left: 0%;
+    top: 55%;
+    align-items: center;
+}
+.contactImg {
+    padding: 5px;
+    margin-top: 40px;
+}
+.mail {
+    color:white;
+    text-decoration: none;
+    height: 10px;
+    font-size: 16px;
+    
+}
+.number {
+    color: white;
+    font-size: 16px;
+    margin-top: 2px;
+}
+.numberImg {
+    padding: 5px;
+    margin-top: 30px;
+}
+.git {
+    margin-top: 20px;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 20px;
+    left: 5px;
+    border-top: 1px solid white;
+}
+.rights{
+    font-size:10px;
+}
+.meImg {
+    position: absolute;
+    border-radius: 166px;
+    left: 500px;
+    top: 25px;
+}

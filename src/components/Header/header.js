@@ -5,7 +5,6 @@ import number from "../../assets/number.png";
 import linkedin from "../../assets/linkedin.png";
 import git from "../../assets/git.png";
 import menu from "../../assets/menu.png";
-import react from "react";
 
 function Header(){
     const [close, setClose] = useState(false);
@@ -27,7 +26,7 @@ function Header(){
                     <button className={classes.linkM}><a href="/"><span className={classes.menuLink}>Home</span></a></button>
                     <button className={classes.linkM}><a href="/certificates"><span className={classes.menuLink}>Certificates</span></a></button>
                     <button className={classes.linkM}><a href="/allprojects/small_projects"><span className={classes.menuLink}>All projects</span></a></button>
-                    <button className={classes.linkM}><a href="/allprojects/small_projects"><span className={classes.menuLink}>Contacts</span></a></button>
+                    <button className={classes.linkM}><a href="/contact"><span className={classes.menuLink}>Contacts</span></a></button>
             </div>
 
         <div className={classes.contact}>
@@ -46,6 +45,7 @@ function Header(){
                 <li><a className={classes.link} href="/">Home</a></li>
                     <li><a className={classes.link} href="/certificates"> Certificates</a></li>
                     <li><a className={classes.link} href="/allprojects/small_projects"> All projects</a></li>
+                    <li><a className={classes.link} href="/contact">Contact</a></li>
                 </ul>
             </div>
         </div>

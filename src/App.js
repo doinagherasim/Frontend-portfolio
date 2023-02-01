@@ -9,6 +9,7 @@ import Certificates from "./components/Certificates/Certificates";
 import Header from "./components/Header/header";
 import SmallProjects from "./components/Projects/smallProjects";
 import MediumProjects from "./components/Projects/mediumProjects";
+import Contact from "./components/Contact/contact";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/calculator' exact element={<Calculator />} />
         <Route path='/responsivelayout' exact element={< ResponsiveLayout />} />
         <Route path='/certificates' exact element={<Certificates />} />
+        <Route path='/contact' exact element={<Contact />} />
       </Routes >
     </div >
   );
