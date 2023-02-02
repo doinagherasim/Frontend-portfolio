@@ -83,7 +83,7 @@
     padding: 20px;
 }
 
-input {
+.inputTask {
     width: 300px;
     height: 35px;
     border-radius: 12px;
@@ -102,3 +102,14 @@ input {
 .status {
     margin-left: 70px;
 }
+@media(max-width: 580px){
+    .todo_wrap {
+        width: 350px;
+    }
+    .task_wrap {
+        width: 320px;
+    }
+    .inputTask {
+        width: 240px;
+    }
+    }

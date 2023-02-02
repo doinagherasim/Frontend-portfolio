@@ -37,7 +37,6 @@
 }
 .contactImg {
     padding: 5px;
-    margin-top: 40px;
 }
 .mail {
     color:white;
@@ -73,4 +72,22 @@
     border-radius: 166px;
     left: 500px;
     top: 25px;
+}
+.download {
+    margin-top: 15px;
+    border: none;
+    background-color: #179d0dba;
+    color: white;
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.download:active {
+    background-color: #169d0d;
+}
+.download:hover {
+    background-color: #169d0d;
+    font-size: 18px;
 }

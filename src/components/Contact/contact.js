@@ -22,6 +22,8 @@ function Contact() {
                 <img className={classes.linkin} src={linkedin} width="40" height="40"/></a>
                 <a href="https://github.com/doinagherasim" target="_blank"> 
                 <img className={classes.git} src={git} width="45" height="45"/></a> 
+                <a href="https://drive.google.com/uc?export=download&id=1G3zScB2gk81jWEbX_PcuJJv3MfOQZTqc" download>
+                  <button className={classes.download}>Download CV</button></a>
                 <img className={classes.meImg} src={eu} width="300" height="300"/>
               </div>
           </div>
