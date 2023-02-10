@@ -27,8 +27,7 @@ function App() {
         <Route path='/contact' exact element={<Contact />} />
       </Routes >
     </div >
-  );
-  
+  ); 
 }
 
 export default App;

@@ -44,7 +44,7 @@ function Header(){
                 <ul className={classes.menu_ul}>
                 <li><a className={classes.link} href="/">Home</a></li>
                     <li><a className={classes.link} href="/certificates"> Certificates</a></li>
-                    <li><a className={classes.link} href="/allprojects/small_projects"> All projects</a></li>
+                    <li><a className={classes.link} href="/allprojects/small_projects"> Projects</a></li>
                     <li><a className={classes.link} href="/contact">Contact</a></li>
                 </ul>
             </div>
