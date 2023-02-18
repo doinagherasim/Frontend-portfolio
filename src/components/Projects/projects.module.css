@@ -158,6 +158,15 @@
     top: 260px;
     left: 10px;
 }
+@media (max-width: 1380px) {
+  .img {
+    width: 45%;
+    height: 200px;
+    border-radius: 10px;
+    transition: none;
+    margin-bottom: 245px;
+  }
+}
 @media (max-width: 750px){
   .wrapper {
     flex-direction: column;
