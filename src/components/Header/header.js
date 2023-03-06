@@ -27,6 +27,7 @@ function Header(){
                     <button className={classes.linkM}><a href="/certificates"><span className={classes.menuLink}>Certificates</span></a></button>
                     <button className={classes.linkM}><a href="/allprojects/small_projects"><span className={classes.menuLink}>All projects</span></a></button>
                     <button className={classes.linkM}><a href="/contact"><span className={classes.menuLink}>Contacts</span></a></button>
+                    <button className={classes.linkM}><a href="/blankpage"><span className={classes.menuLink}>Blank Page</span></a></button>
             </div>
 
         <div className={classes.contact}>

@@ -62,8 +62,8 @@ const smallProjectsdetails = [
             <AllProjects/>
             <div className={classes.wrapper}>
                 {
-                    smallProjectsdetails.map((element) =>
-                    <div className={classes.project_wrap}>
+                    smallProjectsdetails.map((element, index) =>
+                    <div className={classes.project_wrap} key={index}>
                         <img className={`${classes.image}`} src={element.src} alt={element.alt}/>
                         <button className={`${classes.btn}`} onClick={element.project}>{element.title}</button>
                         <a href={element.href}
