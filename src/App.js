@@ -13,7 +13,7 @@ import Contact from "./components/Contact/contact";
 function App() {
   return (
     <div>
-      {/* <Header/> */}
+      <Header/>
       <Routes>
       <Route path='/' exact element={<HomePage />} />
         <Route path='/allprojects/small_projects' exact element={<SmallProjects />} />

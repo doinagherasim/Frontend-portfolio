@@ -1,13 +1,11 @@
 .container {
     position: fixed;
-    border: 1px solid yellow;
     width: 100%;
     height: 100vh;
     z-index: -1;
     top:0px;
     left:0px;
     bottom: 0px;
-    text-align: center;
     background-image: repeating-linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
   }
   .title {
@@ -19,11 +17,12 @@
     margin-top: 120px;
   }
   .subtitle_container {
-    border: 1px solid green;
+    margin: 0 auto;
     width: 500px;
+    display: flex;
+  justify-content: space-around;
   }
   .subtitle {
-    margin-left: 55px;
     color: white;
     text-decoration: none;
     font-size: 20px;
@@ -45,7 +44,6 @@
     padding: 10px;
     z-index: 2;
     margin-top: 240px;
-    border: 1px solid red;
   }
   .project_wrap {
     position: relative;
@@ -66,7 +64,7 @@
     transition: transform .2s;
   }
   .image:hover {
-    transform: scale(1.5); 
+    transform: scale(1.3); 
     z-index: 2;
   }
   .git {
@@ -89,7 +87,6 @@
   .btnLink {
     margin-top:10px;
   }
-  
   .btn:active {
     background-color: black;
     color: white;
@@ -111,8 +108,6 @@
       flex-direction: column;
       flex-wrap: wrap;
       margin-top: 210px;
-      border: 1px solid yellow;
-  
     }
     .project_wrap {
       transition: none;
@@ -120,10 +115,6 @@
     }
     .image:hover {
       transform: none;
-    }
-    .subtitle {
-      font-size: 20px;
-      margin-left: 30px;
     }
 
 }
@@ -134,17 +125,11 @@
       height: 430px;
       margin: 20 auto;
     }
-    /* .subtitle {
-      font-size: 15px;
-      margin-left: 20px;
-    } */
-}
-@media (max-width: 526px){
-    .project_wrap {
-      width: 300px;
-      transition: none;
-      height: 430px;
-      margin: 20 auto;
+    .subtitle_container {
+      width: 400px;
+    }
+    .subtitle {
+      font-size: 18px;
     }
 }
 @media (max-width: 416px){
@@ -154,6 +139,15 @@
       height: 380px;
       margin: 20 auto;
     }
+    .title {
+      font-size: 25px;
+    }
+    .subtitle_container {
+      width: 350px;
+    }
+    .subtitle {
+      font-size: 15px;
+    }
 }
 @media (max-width: 350px){
     .project_wrap {
@@ -162,7 +156,21 @@
       height: 320px;
       margin: 20 auto;
     }
+    .subtitle_container {
+      width: 200px;
+    }
     .subtitle {
-        font-size: 10px;
-      }
+      font-size: 12px;
+    }
+    .title {
+      font-size: 25px;
+    }
+}
+@media (max-width: 220px){
+  .subtitle_container {
+    width: 200px;
+  }
+  .subtitle {
+    font-size: 10px;
+  }
 }

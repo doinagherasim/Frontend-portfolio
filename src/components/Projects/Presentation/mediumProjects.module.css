@@ -1,0 +1,85 @@
+
+.container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  top:0px;
+  left:0px;
+  bottom: 0px;
+  background-image: repeating-linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
+}
+.wrapper {
+  border: 2px solid yellow;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+  padding: 10px;
+  z-index: 2;
+  margin-top: 240px;
+}
+
+.projectWrap {
+  margin-top: 50px;
+  border: 1px solid red;
+  background-image: linear-gradient(to bottom right, white, rgba(0,205,212,.25098039215686274));
+  border-radius: 10px;
+  width: 1100px;
+  height: 470px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.videoWrap {
+  margin-top:30px;
+  width: 700px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  border: 5px solid white;
+}
+.video {
+  width:100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  opacity: 1;
+}
+.project_content {
+  position: relative;
+  margin-top: 60px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid green;
+  height: 300px ;
+}
+.description {
+  margin-top: 7px;
+  font-size: 15px;
+  font-family: Helvetica, sans-serif;
+  font-weight: 100;
+  color: black;
+}
+.btn {
+  width: 70%;
+  height: 40px;
+  color: #003233c8;
+  font-size: 15px;
+  border-radius: 0.7em;
+  cursor: pointer;
+  bottom: 80px;
+  border: none;
+  text-decoration: none;
+}
+.btnLink {
+  margin-top: 9px;
+  font-weight: bold;
+}
+
+@media (max-width: 1380px) {
+  
+}
