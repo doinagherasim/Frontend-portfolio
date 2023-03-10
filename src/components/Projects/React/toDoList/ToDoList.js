@@ -8,15 +8,15 @@ function ToDoList () {
     const [tasks, setTasks] = useState([
 {
     id: 0,
-    title: "Task 1",
+    title: "Read 5 pages",
     complete: true
 },
     {id: 1,
-        title: "Task 2",
+        title: "Finish header design",
         complete: false 
 },
     {id: 2,
-        title: "Task 3",
+        title: "Run 5 km",
         complete: false 
 }
     ]);

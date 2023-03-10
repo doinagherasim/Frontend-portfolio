@@ -7,9 +7,10 @@
   z-index: -1;
   top:0px;
   left:0px;
+  bottom:0px;
   background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
 }
-.title {
+/* .title {
   font-size: 30px;
   font-family: "lora" serif;
   text-align: center;
@@ -29,61 +30,70 @@
 }
 .subtitle:active{
   text-decoration: underline;
-}
-.git {
+} */
+/* .git {
   margin-top: 10px;
-}
-.wrapper {
+} */
+/* .wrapper {
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  width: 95%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 1000px;
   align-items: center;
   padding: 10px;
   z-index: 2;
   margin-top: 240px;
-}
+  border: 1px solid red;
+} */
 
 /* small projects only */
-.project_wrap {
+/* .project_wrap {
   position: relative;
   display: flex;
   justify-content: center;
   background: linear-gradient(rgba(255, 255, 255, 0.692), #00ccd485);
-  width: 25%;
-  height: 430px;
-  margin: 10px;
+  width: 400px;
+  height: 530px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: 10px;
-  transition: transform .2s;
-}
-.project_wrap:hover {
-  transform: scale(1.2); 
+} */
+/* .project_wrap:hover {
   z-index: 2;
   background: linear-gradient(rgb(196, 195, 195), #006569);
-}
+} */
 
-.image {
+/* .image {
   margin-top: 10px;
   position: absolute;
   width: 90%;
   border-radius: 5px;
+  transition: transform .2s;
 }
+.image:hover {
+  transform: scale(1.5); 
+  z-index: 2;
+} */
 .calculator {
   width: 62%;
 }
-.btn {
+/* .btn {
   position: absolute;
   text-align: center;
   background-color: #131f1b;
-  width: 70%;
+  width: 220px;
   height: 40px;
   color: white;
   font-size: 15px;
   border-radius: 0.7em;
   cursor: pointer;
-  bottom: 60px;
+  bottom: 80px;
   border: none;
   text-decoration: none;
+}
+.btnLink {
+  MARGIN-TOP:10px;
 }
 
 .btn:active {
@@ -98,20 +108,33 @@
   cursor: pointer;
 }
 .btnGit {
- bottom: 10px;
-}
-.wrapperMedium {
+ bottom: 35px;
+} */
 
-}
 .projectWrap {
+  border: 1px solid red;
+  margin-left:100px;
+  margin-right:50px;
   position: relative;
-  width: 49%;
+  width: 1100px;
   height: 470px;
   display: flex;
   flex-wrap: wrap;
-  border-radius: 10px;
-  justify-content: space-between;
-  background: linear-gradient(rgba(255, 255, 255, 0.692), #00cdd440);
+}
+.videoWrap {
+  width: 700px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  border: 5px solid white;
+}
+.video {
+  width:100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  opacity: 1;
 }
 .img {
   width: 300px;
@@ -120,6 +143,16 @@
   top: 5px;
   margin: 7px;
   transition: transform .2s;
+}
+.project_content {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid green;
+  width: 300px;
+}
+.description {
+  font-size:10px;
 }
 .img:hover {
   transform: scale(1.3);
@@ -159,47 +192,63 @@
     left: 10px;
 }
 @media (max-width: 1380px) {
-  .img {
+  /* .container {
+    height: 200vh;
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
+  } */
+  /* .img {
     width: 45%;
     height: 200px;
     border-radius: 10px;
     transition: none;
     margin-bottom: 245px;
-  }
+  } */
 }
 @media (max-width: 750px){
+  .container {
+    height: 300vh;
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
+  }
   .wrapper {
+    margin: 0 auto;
     flex-direction: column;
+    flex-wrap: wrap;
     margin-top: 210px;
-    height: 1900px;
+    height: 2000px;
+    width: 700px;
+    border: 1px solid yellow;
+
   }
   .project_wrap {
-    width: 100%;
+    width: 600px;
     transition: none;
     margin-right: 22px;
+    height:700px;
   }
-  .project_wrap:hover {
+  .image {
+
+  }
+  .image:hover {
     transform: none;
-    
   }
   .subtitle {
     font-size: 20px;
     margin-left: 30px;
   }
-  .projectWrap {
+  /* .projectWrap {
     width: 100%;
     flex-wrap: nowrap;
     align-items: center;
     height: 410px;
-  }
-  .img {
+  } */
+  /* .img {
     width: 160px;
     height: 145px;
     border-radius: 10px;
     transition: none;
     margin-bottom: 245px;
-  }
-  .description {
+  } */
+  /* .description {
     top:165px;
   }
   .wrapperMedium {
@@ -209,6 +258,6 @@
   .btnwrap{
     bottom: 35px;
     left: 20%;
-}
+} */
 }
 

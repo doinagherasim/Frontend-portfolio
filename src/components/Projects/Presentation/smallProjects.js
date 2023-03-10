@@ -1,9 +1,9 @@
-import classes from "./projects.module.css";
+import classes from "./smallProjects.module.css";
 import { useNavigate } from "react-router-dom";
-import Calculator from "../../assets/Calculator.png";
-import ToDoList from "../../assets/ToDoList.png";
-import Password from "../../assets/Password.png";
-import ResponsiveDesign from "../../assets/ResponsiveDesign.png";
+import Calculator from "../../../assets/Calculator.png";
+import ToDoList from "../../../assets/ToDoList.png";
+import Password from "../../../assets/Password.png";
+import DiceGame from "../../../assets/DiceGame.png";
 import AllProjects from "./projects";
 
 function SmallProjects() {
@@ -18,19 +18,8 @@ function SmallProjects() {
     const Project3 = () => {
         navigate("/calculator");
     };
-    const Project4 = () => {
-        navigate("/responsivelayout");
-    };
 
 const smallProjectsdetails = [
-    {
-    id: 0,
-    src: ResponsiveDesign,
-    alt: "layout",
-    project: Project4,
-    title: "RESPONSIVE LAYOUT 🖥️ → 📱",
-    href:"https://github.com/doinagherasim/Responsive-Layout-destop-tablete-phone/tree/master/src"
- },
 {
     id: 1,
     src: ToDoList,
@@ -61,6 +50,15 @@ const smallProjectsdetails = [
         <div>
             <AllProjects/>
             <div className={classes.wrapper}>
+            <div className={classes.project_wrap}>
+                        <img className={`${classes.image}`} src={DiceGame} alt="diceGame"/>
+                        <a className={`${classes.btn}`}  href="https://play-dice-game-online.web.app/" target="_blank">
+                            <p className={classes.btnLink}>DICE GAME</p>
+                        </a>
+                        <a href="https://github.com/doinagherasim/Dice-Game/tree/master/src"
+                        className={`${classes.btn} ${classes.btnGit}`} target="_blank">
+                        <p className={classes.git}>GitHub Code</p></a>
+                    </div>
                 {
                     smallProjectsdetails.map((element, index) =>
                     <div className={classes.project_wrap} key={index}>
