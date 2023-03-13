@@ -13,13 +13,16 @@
     top: 20%;
     left: 15%;
     width:1000px;
-    height:530px;
+    height:600px;
+    display: flex;
+    flex-direction: column;
 } 
 .center {
     position: absolute;
     width:350px;
-    height:100px;
+    height:300px;
     left: 0px;
+    margin-bottom: 20px;
 }
 .name {
     font-size: 70px;
@@ -52,6 +55,9 @@ background-color: rgba(0, 0, 0, 0.236);
     font-size:10px;
 }
 @media (max-width: 675px){
+    .container_center {
+        height: 550px;
+    }
     .name {
         font-size:40px;
     }

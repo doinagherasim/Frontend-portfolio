@@ -34,7 +34,7 @@ function MediumProjects () {
             <div className={classes.projectWrap}>
             <div className={`${classes.project_content} ${classes.contentBottom} style={textAlign:"right"}`}>
                     <h2 style={{color: "black"}} className={classes.title}>FOOD ORDER APP</h2>
-                    <p className={classes.description}>Facilitates restaurant orders with menu selection, quantity adjustment, cost calculation, and delivery information input.</p>
+                    <p className={classes.description}>Facilitates restaurant orders with menu selection, quantity adjustment, cost calculation, and delivery information form.</p>
                     <div className={classes.btn_wrap}>
                     <a className={classes.btn} href="https://food-order-app-c1611.web.app/" target="_blank">
                         <p className={classes.btnLink}>See how it works → </p>

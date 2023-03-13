@@ -1,6 +1,5 @@
 
 .container {
-  border: 1px solid  yellow;
   margin: 0 auto;
   position: fixed;
   width: 100%;
@@ -12,7 +11,6 @@
   background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.806), #016468c8);
 }
 .wrapper {
-  border: 1px solid red;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -128,6 +126,9 @@ width: 200px;
     height: 400px;
     justify-content: space-around;
   }
+  .projectWrap {
+    margin-top: 10px;
+  }
 }
 @media (max-width: 450px) {
   .projectWrap {
@@ -148,6 +149,10 @@ width: 200px;
     padding-bottom: 10px;
     height: 300px;
     justify-content: space-around;
+    margin-top: 2px;
+  }
+  .wrapper {
+    margin-top:215px;
   }
 
   .title {
