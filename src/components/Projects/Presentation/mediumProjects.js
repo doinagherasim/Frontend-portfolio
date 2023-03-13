@@ -18,7 +18,7 @@ function MediumProjects () {
                 <video src={videoCat} ref={videoRef} muted autoPlay loop className={classes.video}/>
                 </div>
                 <div className={classes.project_content} style={{textAlign:"left"}}>
-                    <h2 style={{color: "black"}}>FEED YOUR CAT APP</h2>
+                    <h2 style={{color: "black"}} className={classes.title}>FEED YOUR CAT APP</h2>
                     <p className={classes.description}>Designed to help cat owners ensure that their furry friends stay healthy and happy. </p>
                 <div className={classes.btn_wrap}>
                     <a className={classes.btn} href="https://cat-feed-app.web.app/" target="_blank">
@@ -30,9 +30,10 @@ function MediumProjects () {
                 </div>
                 </div>
             </div>
+
             <div className={classes.projectWrap}>
-            <div className={classes.project_content} style={{textAlign:"right"}}>
-                    <h2 style={{color: "black"}}>FOOD ORDER APP</h2>
+            <div className={`${classes.project_content} ${classes.contentBottom} style={textAlign:"right"}`}>
+                    <h2 style={{color: "black"}} className={classes.title}>FOOD ORDER APP</h2>
                     <p className={classes.description}>Facilitates restaurant orders with menu selection, quantity adjustment, cost calculation, and delivery information input.</p>
                     <div className={classes.btn_wrap}>
                     <a className={classes.btn} href="https://food-order-app-c1611.web.app/" target="_blank">
@@ -43,7 +44,7 @@ function MediumProjects () {
                     </a>  
                     </div>
                 </div>
-                <div className={classes.videoWrap}>
+                <div className={`${classes.videoWrap} ${classes.videoWrapBottom}`}>
                 <video src={videoFood} ref={videoRef} muted autoPlay loop className={classes.video}/>
                 </div>
             </div>
