@@ -85,7 +85,7 @@
     margin-left: 10px;
 }
 .menuText {
-    margin-top: 33px;
+    margin-top: 29px;
     font-size: 25px;
 }
 .menuList {
@@ -106,14 +106,14 @@
     cursor: pointer;
 }
 .menuLink {
-    font-family: "Nunito", sans-serif;
+    /* font-family: "Nunito", sans-serif; */
     font-size: 20px;
+    font-weight: 600;
     text-decoration: none;
     color: white;
     position: absolute;
     left: 10px;
     padding: 10px;
-    font-weight: 200;
 }
 
 .linkM {
